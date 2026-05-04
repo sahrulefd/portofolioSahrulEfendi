@@ -1,0 +1,222 @@
+/* Enhanced Animations and Interactions */
+
+/* Smooth Page Transitions */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: pageLoad 0.6s ease-out;
+}
+
+/* Hover Effects for Interactive Elements */
+a,
+button {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Glow Effects */
+.hover\:shadow-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+}
+
+.hover\:shadow-glow-strong:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 191, 255, 0.3);
+}
+
+/* Card Lift Animation */
+@keyframes cardLift {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px rgba(0, 191, 255, 0.2);
+  }
+}
+
+.project-card:hover,
+.skill-card:hover,
+.certificate-card:hover {
+  animation: cardLift 0.4s ease-out forwards;
+}
+
+/* Button Press Animation */
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+button:active {
+  animation: buttonPress 0.3s ease-out;
+}
+
+/* Scroll Reveal Animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Animation Enhancement */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes pulseBorder {
+  0%,
+  100% {
+    border-color: rgba(0, 191, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
+  }
+  50% {
+    border-color: rgba(0, 191, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+  }
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #00bfff;
+  outline-offset: 2px;
+}
+
+/* Mobile Touch-Friendly Enhancements */
+@media (hover: none) and (pointer: coarse) {
+  a,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+
+  .project-card,
+  .skill-card,
+  .certificate-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:active,
+  .skill-card:active,
+  .certificate-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Smooth Modal Animations */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal.show {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Loading States */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading {
+  background: linear-gradient(90deg, #1a1a2e 25%, #2d2d4d 50%, #1a1a2e 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Text Selection Styling */
+::selection {
+  background-color: #00bfff;
+  color: #0f0f23;
+}
+
+::-moz-selection {
+  background-color: #00bfff;
+  color: #0f0f23;
+}
+
+/* Scrollbar Styling (Webkit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 35, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bfff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+}
