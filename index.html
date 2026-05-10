@@ -51,12 +51,12 @@
             sans: ["Inter", "sans-serif"],
           },
           colors: {
-            "neo-yellow": "#FFD600",
-            "neo-pink": "#FF006E",
+            "neo-yellow": "#00539C",
+            "neo-pink": "#FFBA09",
             "neo-blue": "#3A86FF",
-            "neo-green": "#00FF66",
+            "neo-green": "#128C7E",
             "neo-orange": "#FB5607",
-            "neo-purple": "#8338EC",
+            "neo-purple": "#00C3CC",
             "neo-bg": "#F5F5F5",
           },
           boxShadow: {
@@ -179,46 +179,6 @@
     .skill-card:hover {
       transform: translate(-4px, -4px);
       box-shadow: 8px 8px 0px 0px #000000;
-    }
-
-    /* Added marquee animation styles for infinite horizontal scroll */
-    .skills-marquee-container {
-      overflow: hidden;
-      width: 100%;
-      padding: 2rem 0;
-    }
-
-    .skills-marquee {
-      display: flex;
-      gap: 1.5rem;
-      animation: marquee 40s linear infinite;
-      width: fit-content;
-    }
-
-    .skills-marquee-item {
-      flex-shrink: 0;
-      min-width: 120px;
-      background: #FFFFFF;
-      border: 3px solid #000000;
-      box-shadow: 4px 4px 0px 0px #000000;
-      padding: 1.5rem;
-      text-align: center;
-      transition: all 0.2s ease;
-    }
-
-    .skills-marquee-item:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 8px 8px 0px 0px #000000;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
     }
 
     /* End marquee animation */
@@ -502,7 +462,44 @@
     .delay-400 { transition-delay: 400ms; }
     .delay-500 { transition-delay: 500ms; }
 
-    /* End GitHub styles */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.bento-card {
+  background: white;
+  border: 4px solid black;
+  box-shadow: 8px 8px 0px black;
+  transition: 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px black;
+}
+
+.bento-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+#certificates img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   </style>
 </head>
 <script>
@@ -520,7 +517,7 @@ function closeCertificateModal() {
 }
 </script>
 
-<body class="bg-neo-bg text-black font-sans selection:bg-neo-pink selection:text-white overflow-x-hidden">
+<body class="bg-neo-bg text-black font-sans grid-pattern">
   <!-- Enhanced Header with Language Toggle -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
     <div class="container mx-auto px-4 sm:px-6 py-4">
@@ -586,192 +583,181 @@ function closeCertificateModal() {
   </header>
 
  <!-- Enhanced Hero Section -->
-<section id="home"
-  class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 border-b-8 border-black bg-neo-yellow">
-  
-  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px]"></div>
+<section id="home" class="min-h-screen pt-32 pb-20 px-4 bg-neo-bg grid-pattern">
+  <div class="max-w-7xl mx-auto bento-grid">
 
-  <div class="absolute inset-0">
-    <div class="draggable-shape absolute top-16 left-5 md:top-1/3 md:left-1/4 w-16 h-16 md:w-32 md:h-32 bg-neo-pink border-4 border-black shadow-neo-lg animate-float hover:rotate-12 transition-transform duration-300 cursor-move z-0"></div>
-    
-    <div class="draggable-shape absolute bottom-10 right-5 md:bottom-1/3 md:right-1/4 w-20 h-20 md:w-40 md:h-40 bg-neo-blue border-4 border-black shadow-neo-lg animate-float hover:-rotate-12 transition-transform duration-300 cursor-move z-0"
-      style="animation-delay: 1s"></div>
-    
-    <div class="draggable-shape absolute top-20 right-5 md:top-1/2 md:left-1/2 w-14 h-14 md:w-24 md:h-24 bg-neo-green border-4 border-black shadow-neo-lg animate-float hover:rotate-45 transition-transform duration-300 cursor-move z-0"
-      style="animation-delay: 2s"></div>
-  </div>
+    <!-- PROFILE -->
+    <div class="bento-card col-span-12 lg:col-span-7 p-10 bg-neo-yellow">
+      <p class="font-black uppercase mb-4">
+        Halo, Saya
+      </p>
 
-  <div class="container mx-auto px-4 sm:px-6 z-30 text-center">
-    
-    <p class="text-lg sm:text-xl md:text-2xl font-black mb-4 text-black uppercase tracking-widest animate-slide-in">
-      Halo, Saya
-    </p>
+      <h1 class="text-5xl md:text-7xl font-black uppercase leading-none mb-6">
+        Sahrul Efendi
+      </h1>
 
-    <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 text-black uppercase tracking-tighter">
-      <div class="relative inline-block animate-slide-down-rope">
-        <span
-          class="bg-white px-6 py-2 border-4 border-black shadow-neo-xl inline-block transform -rotate-2 hover:rotate-2 transition-transform duration-300 cursor-default relative">
-
-          <div class="absolute top-0 left-8 w-1 h-[1000px] bg-black -translate-y-full -z-10 hidden md:block"></div>
-          <div class="absolute top-0 right-8 w-1 h-[1000px] bg-black -translate-y-full -z-10 hidden md:block"></div>
-
-          <div class="absolute top-1 left-7 w-3 h-3 bg-black rounded-full hidden md:block"></div>
-          <div class="absolute top-1 right-7 w-3 h-3 bg-black rounded-full hidden md:block"></div>
-
-          Sahrul Efendi
-        </span>
+      <div class="inline-block bg-black text-white px-4 py-2 border-4 border-black text-xl font-black uppercase">
+        Web Developer
       </div>
-    </h1>
 
-    <h2
-      class="text-2xl sm:text-3xl md:text-4xl font-black mb-8 text-black animate-slide-up bg-neo-pink text-white inline-block px-4 py-2 border-4 border-black shadow-neo transform rotate-1 hover:-rotate-1 transition-transform duration-300 cursor-default">
-      <span class="typing-text">Web Developer</span>
-    </h2>
+      <p class="mt-8 text-lg font-bold max-w-2xl">
+        Mahasiswa Teknik Informatika UIR yang fokus pada web development,
+        UI modern, dan pengembangan sistem informasi.
+      </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 animate-slide-up">
-      
-      <a href="#projects"
-        class="neo-btn px-8 py-4 text-lg uppercase tracking-bold bg-neo-blue text-white">
-        Lihat Karya Saya
-      </a>
-
-      <!-- WA langsung ke nomor kamu -->
-      <a href="https://wa.me/6285833107599" target="_blank"
-        class="neo-btn px-8 py-4 text-lg uppercase tracking-bold bg-neo-green text-black">
-        <i class="fab fa-whatsapp mr-2"></i>Chat WhatsApp
-      </a>
-
-      <!-- SOCIAL MEDIA -->
-      <div class="flex gap-4">
-
-        <!-- GitHub (FIXED) -->
-        <a href="https://github.com/sahrulefendi16" target="_blank"
-          class="neo-btn w-14 h-14 bg-neo-purple flex items-center justify-center text-white">
-          <i class="fab fa-github text-2xl"></i>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="#projects" class="neo-btn px-6 py-3 bg-neo-blue text-white">
+          Lihat Project
         </a>
 
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/sahrulefd_" target="_blank"
-          class="neo-btn w-14 h-14 bg-neo-pink flex items-center justify-center text-white">
-          <i class="fab fa-instagram text-2xl"></i>
+        <a href="https://wa.me/6285833107599"
+          class="neo-btn px-6 py-3 bg-neo-green">
+          WhatsApp
         </a>
-
-        <!-- TikTok (NEW) -->
-        <a href="https://www.tiktok.com/@sahrulefndi16" target="_blank"
-          class="neo-btn w-14 h-14 bg-black flex items-center justify-center text-white">
-          <i class="fab fa-tiktok text-2xl"></i>
-        </a>
-
-        <!-- LinkedIn (NEW) -->
-        <a href="https://www.linkedin.com/in/sahrul-efendi-3813533bb" target="_blank"
-          class="neo-btn w-14 h-14 bg-neo-blue flex items-center justify-center text-white">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-
       </div>
     </div>
-  </div>
 
-  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-    <a href="#about" class="text-black hover:text-neo-pink transition-colors">
-      <i class="fas fa-chevron-down text-4xl"></i>
-    </a>
-  </div>
-</section>
+    <!-- PHOTO -->
+    <div class="bento-card col-span-12 lg:col-span-5 bg-neo-pink p-0 min-h-[400px]">
+      <img src="img/profil.jpg"
+        class="w-full h-full object-cover">
+    </div>
 
- <!-- Enhanced About Section -->
-<section id="about" class="py-10 sm:py-16 md:py-20 scroll-mt-16">
-  <div class="container mx-auto px-4 sm:px-6">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-10 text-center uppercase tracking-tighter reveal reveal-up">
-      <span
-        class="bg-neo-pink text-white px-6 py-2 border-4 border-black shadow-neo-lg inline-block transform rotate-2 hover:-rotate-2 transition-transform duration-300 cursor-default">
+    <!-- SMALL INFO -->
+    <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-blue text-white">
+      <div class="text-5xl mb-4">
+        <i class="fab fa-github"></i>
+      </div>
+
+      <h3 class="bento-title">
+        Github
+      </h3>
+
+      <p class="font-bold mt-2">
+        Open Source & Personal Projects
+      </p>
+    </div>
+
+    <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-green">
+      <div class="text-5xl mb-4">
+        <i class="fas fa-code"></i>
+      </div>
+
+      <h3 class="bento-title">
+        Fullstack
+      </h3>
+
+      <p class="font-bold mt-2">
+        Laravel, Vue, Tailwind, PHP
+      </p>
+    </div>
+
+    <div class="bento-card col-span-12 lg:col-span-6 p-8 bg-white">
+      <h3 class="bento-title mb-4">
         Tentang Saya
-      </span>
-    </h2>
+      </h3>
 
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
-
-      <!-- FOTO -->
-      <div class="lg:w-2/5 flex justify-center reveal reveal-left">
-        <div class="relative">
-          <div
-            class="w-64 h-64 sm:w-72 sm:h-72 overflow-hidden border-8 border-black shadow-neo-xl transform -rotate-3 cursor-pointer transition-transform duration-300 ease-in-out">
-            <img src="img/profil.jpg" alt="Foto Profil" class="w-full h-full object-cover object-center">
-          </div>
-          <div
-            class="absolute -bottom-4 -right-4 w-20 h-20 bg-neo-yellow border-4 border-black shadow-neo -z-10 animate-spin-slow">
-          </div>
-        </div>
-      </div>
-
-      <!-- DESKRIPSI -->
-      <div class="lg:w-3/5 reveal reveal-right delay-200">
-
-        <h3 class="text-2xl sm:text-3xl font-black mb-4 uppercase tracking-tight">
-          Saya <span class="text-neo-blue">Sahrul Efendi</span>,
-          <span class="bg-neo-green px-2">Mahasiswa S1 Teknik Informatika</span>
-        </h3>
-
-        <p class="text-black font-medium mb-4 leading-relaxed text-sm border-l-4 border-neo-pink pl-4">
-          Saya adalah mahasiswa S1 Teknik Informatika di Universitas Islam Riau yang memiliki minat dalam pengembangan web dan sistem informasi. 
-          Saya telah mengerjakan berbagai proyek selama perkuliahan, mulai dari website sederhana hingga sistem yang lebih kompleks. 
-          Saya senang menggabungkan logika pemrograman dengan desain yang menarik untuk menghasilkan aplikasi yang fungsional dan efisien.
-        </p>
-
-        <!-- INFO -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 reveal reveal-up delay-400">
-
-          <div class="flex items-center p-3 bg-white border-3 border-black shadow-neo">
-            <i class="fas fa-map-marker-alt text-neo-pink mr-3 text-lg"></i>
-            <span class="text-xs sm:text-sm font-bold">Riau, Indonesia</span>
-          </div>
-
-          <div class="flex items-center p-3 bg-white border-3 border-black shadow-neo">
-            <i class="fas fa-envelope text-neo-blue mr-3 text-lg"></i>
-            <span class="text-xs sm:text-sm font-bold break-all">sahrulsyahrull07@gmail.com</span>
-          </div>
-
-          <!-- WA -->
-          <div class="flex items-center p-3 bg-white border-3 border-black shadow-neo">
-            <i class="fab fa-whatsapp text-neo-green mr-3 text-lg"></i>
-            <span class="text-xs sm:text-sm font-bold">085833107599</span>
-          </div>
-
-        </div>
-
-        <!-- BUTTON -->
-        <div class="flex flex-col sm:flex-row gap-6 mt-8">
-          <a href="#contact" class="neo-btn px-8 py-2 bg-white text-black uppercase text-sm">
-            <i class="fas fa-paper-plane mr-2"></i> Rekrut Saya
-          </a>
-        </div>
-
-      </div>
+      <p class="font-medium leading-relaxed">
+        Saya mahasiswa S1 Teknik Informatika Universitas Islam Riau
+        yang aktif mengembangkan website, sistem informasi,
+        dan UI modern dengan pendekatan kreatif.
+      </p>
     </div>
+
   </div>
 </section>
 
 <!-- Simple Projects Section -->
-<section id="projects" class="py-20 sm:py-32 border-y-8 border-black bg-neo-blue">
-  <div class="container mx-auto px-4 sm:px-6">
+<section id="projects" class="py-24 px-4 bg-neo-blue">
+  <div class="max-w-7xl mx-auto">
 
-    <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-12 text-center uppercase tracking-tighter">
-      <span class="bg-neo-yellow text-black px-8 py-3 border-4 border-black shadow-neo-lg">
-        Proyek Saya
-      </span>
+    <h2 class="text-5xl font-black uppercase mb-14 text-center">
+      PROJECT
     </h2>
 
-    <div class="space-y-6 max-w-2xl mx-auto">
+    <div class="bento-grid">
 
-      <!-- Project 1 -->
-      <a href="https://www.sahrulefendi.my.id" target="_blank"
-        class="block bg-white border-4 border-black shadow-neo p-6 hover:translate-x-2 transition">
-        <h3 class="text-xl font-black uppercase">Website Portfolio</h3>
-        <p class="text-sm font-bold mt-2">Klik untuk melihat project</p>
-      </a>
+      <!-- MAIN PROJECT -->
+      <div class="bento-card col-span-12 lg:col-span-8 bg-white p-8">
+
+        <div class="flex justify-between items-start flex-wrap gap-6">
+
+          <div>
+            <h3 class="text-4xl font-black uppercase mb-4">
+              Portfolio Website
+            </h3>
+
+            <p class="font-bold max-w-2xl">
+              Website portfolio.
+            </p>
+          </div>
+
+          <a href="https://www.sahrulefendi.my.id"
+            target="_blank"
+            class="neo-btn px-6 py-3">
+            Live Demo
+          </a>
+
+        </div>
+
+        <div class="mt-10 h-72 overflow-hidden border-4 border-black">
+          <img src="img/portofolio.png"
+            class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- SMALL CARD -->
+      <div class="bento-card col-span-6 lg:col-span-4 bg-neo-yellow p-6">
+        <h3 class="text-2xl font-black uppercase">
+          Laravel
+        </h3>
+
+        <p class="mt-4 font-bold">
+          Sistem informasi & CRUD apps.
+        </p>
+      </div>
+
+      <div class="bento-card col-span-6 lg:col-span-4 bg-neo-pink text-white p-6">
+        <h3 class="text-2xl font-black uppercase">
+          UI Design
+        </h3>
+
+        <p class="mt-4 font-bold">
+          Figma & modern interface design.
+        </p>
+      </div>
+
+      <div class="bento-card col-span-12 lg:col-span-8 bg-neo-green p-8">
+        <h3 class="text-3xl font-black uppercase mb-4">
+          Tech Stack
+        </h3>
+
+        <div class="flex flex-wrap gap-3">
+
+          <span class="px-4 py-2 bg-white border-2 border-black font-black">
+            HTML
+          </span>
+
+          <span class="px-4 py-2 bg-white border-2 border-black font-black">
+            CSS
+          </span>
+
+          <span class="px-4 py-2 bg-white border-2 border-black font-black">
+            JavaScript
+          </span>
+
+          <span class="px-4 py-2 bg-white border-2 border-black font-black">
+            Vue
+          </span>
+
+          <span class="px-4 py-2 bg-white border-2 border-black font-black">
+            Laravel
+          </span>
+
+        </div>
+      </div>
 
     </div>
-
   </div>
 </section>
 
@@ -785,185 +771,94 @@ function closeCertificateModal() {
       </span>
     </h2>
 
-    <div class="skills-marquee-container">
-      <div class="skills-marquee">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
 
         <!-- FRONTEND -->
-        <div class="skills-marquee-item group hover:bg-[#E34F26] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-html5"></i></div>
           <div class="font-black text-sm uppercase">HTML5</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#1572B6] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-css3-alt"></i></div>
           <div class="font-black text-sm uppercase">CSS3</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#F7DF1E] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-js"></i></div>
           <div class="font-black text-sm uppercase">JavaScript</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#06B6D4] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-wind"></i></div>
           <div class="font-black text-sm uppercase">Tailwind</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#7952B3] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-bootstrap"></i></div>
           <div class="font-black text-sm uppercase">Bootstrap</div>
         </div>
 
         <!-- BACKEND -->
-        <div class="skills-marquee-item group hover:bg-[#777BB4] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-php"></i></div>
           <div class="font-black text-sm uppercase">PHP</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#FF2D20] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-laravel"></i></div>
           <div class="font-black text-sm uppercase">Laravel</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#4479A1] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-database"></i></div>
           <div class="font-black text-sm uppercase">MySQL</div>
         </div>
 
         <!-- NEW SKILLS -->
-        <div class="skills-marquee-item group hover:bg-[#3776AB] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-python"></i></div>
           <div class="font-black text-sm uppercase">Python</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#42b883] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-vuejs"></i></div>
           <div class="font-black text-sm uppercase">Vue</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#ff9800] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-image"></i></div>
           <div class="font-black text-sm uppercase">PicsayPro</div>
         </div>
 
         <!-- NETWORK -->
-        <div class="skills-marquee-item group hover:bg-[#1BA0D7] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-network-wired"></i></div>
           <div class="font-black text-sm uppercase">Cisco</div>
         </div>
 
         <!-- DESIGN -->
-        <div class="skills-marquee-item group hover:bg-[#F24E1E] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-figma"></i></div>
           <div class="font-black text-sm uppercase">Figma</div>
         </div>
 
         <!-- TOOLS -->
-        <div class="skills-marquee-item group hover:bg-[#6e5494] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fab fa-github"></i></div>
           <div class="font-black text-sm uppercase">GitHub</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-gray-600 transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-rocket"></i></div>
           <div class="font-black text-sm uppercase">Vercel</div>
         </div>
 
-        <div class="skills-marquee-item group hover:bg-[#FF6C37] transition-all duration-300">
+        <div class="bento-card p-6 text-center bg-white">
           <div class="text-4xl mb-3"><i class="fas fa-envelope"></i></div>
           <div class="font-black text-sm uppercase">Postman</div>
         </div>
 
-        <!-- DUPLICATE (WAJIB UNTUK MARQUEE) -->
-        <!-- Copy ulang semua di atas biar loop halus -->
- <!-- FRONTEND -->
-        <div class="skills-marquee-item group hover:bg-[#E34F26] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-html5"></i></div>
-          <div class="font-black text-sm uppercase">HTML5</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#1572B6] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-css3-alt"></i></div>
-          <div class="font-black text-sm uppercase">CSS3</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#F7DF1E] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-js"></i></div>
-          <div class="font-black text-sm uppercase">JavaScript</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#06B6D4] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-wind"></i></div>
-          <div class="font-black text-sm uppercase">Tailwind</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#7952B3] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-bootstrap"></i></div>
-          <div class="font-black text-sm uppercase">Bootstrap</div>
-        </div>
-
-        <!-- BACKEND -->
-        <div class="skills-marquee-item group hover:bg-[#777BB4] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-php"></i></div>
-          <div class="font-black text-sm uppercase">PHP</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#FF2D20] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-laravel"></i></div>
-          <div class="font-black text-sm uppercase">Laravel</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#4479A1] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-database"></i></div>
-          <div class="font-black text-sm uppercase">MySQL</div>
-        </div>
-
-        <!-- NEW SKILLS -->
-        <div class="skills-marquee-item group hover:bg-[#3776AB] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-python"></i></div>
-          <div class="font-black text-sm uppercase">Python</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#42b883] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-vuejs"></i></div>
-          <div class="font-black text-sm uppercase">Vue</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#ff9800] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-image"></i></div>
-          <div class="font-black text-sm uppercase">PicsayPro</div>
-        </div>
-
-        <!-- NETWORK -->
-        <div class="skills-marquee-item group hover:bg-[#1BA0D7] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-network-wired"></i></div>
-          <div class="font-black text-sm uppercase">Cisco</div>
-        </div>
-
-        <!-- DESIGN -->
-        <div class="skills-marquee-item group hover:bg-[#F24E1E] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-figma"></i></div>
-          <div class="font-black text-sm uppercase">Figma</div>
-        </div>
-
-        <!-- TOOLS -->
-        <div class="skills-marquee-item group hover:bg-[#6e5494] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fab fa-github"></i></div>
-          <div class="font-black text-sm uppercase">GitHub</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-gray-600 transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-rocket"></i></div>
-          <div class="font-black text-sm uppercase">Vercel</div>
-        </div>
-
-        <div class="skills-marquee-item group hover:bg-[#FF6C37] transition-all duration-300">
-          <div class="text-4xl mb-3"><i class="fas fa-envelope"></i></div>
-          <div class="font-black text-sm uppercase">Postman</div>
-        </div>
-
-
-      </div>
     </div>
   </div>
 </section>
@@ -981,8 +876,7 @@ function closeCertificateModal() {
     </div>
 
     <!-- GAMBAR -->
-    <img id="certImage" src="" class="w-full mb-4 border-2 border-black">
-    <img id="certImage" class="border-2 border-black mb-4 hidden">
+    <img id="certImage" src="" class="w-full mb-4 border-2 border-black hidden">
 
     <h4 id="certTitle" class="text-lg font-black mb-1"></h4>
     <p id="certOrganization" class="text-blue-600 font-bold text-sm mb-2"></p>
@@ -1005,55 +899,139 @@ function closeCertificateModal() {
       </span>
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Sertifikat 1 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(1, 'Sertifikat 1', ' JUARA II POMNAS XIX JATENG', '2025', 'img/sertifikat 1.jpeg', 'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan POMNAS XIX JATENG tahun 2025.')">
-        <img src="img/sertifikat 1.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-blue text-white">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 1.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            1,
+            'Sertifikat 1',
+            'JUARA II POMNAS XIX JATENG',
+            '2025',
+            'img/sertifikat 1.jpeg',
+            'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan POMNAS XIX JATENG tahun 2025.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 2 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(2, 'Sertifikat 2', '2nd RUNNER UP AT THE INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025', '2025', 'img/sertifikat 2.jpeg', 'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025.')">
-        <img src="img/sertifikat 2.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-purple text-white">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 2.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            2,
+            'Sertifikat 2',
+            '2nd RUNNER UP AT THE INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025',
+            '2025',
+            'img/sertifikat 2.jpeg',
+            'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-purple text-white">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 3 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(3, 'Sertifikat 3', 'Seminar Nasional', '2023', 'img/sertifikat 3.jpeg', 'Mengikuti Seminar Nasional Muda Berkarya Di Era Digital diselenggarakan oleh Himatif Universitas Islam Riau.')">
-        <img src="img/sertifikat 3.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-green text-black">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 3.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            3,
+            'Sertifikat 3',
+            'Seminar Nasional',
+            '2023',
+            'img/sertifikat 3.jpeg',
+            'Mengikuti Seminar Nasional Muda Berkarya Di Era Digital diselenggarakan oleh Himatif Universitas Islam Riau.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 4 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(4, 'Sertifikat 4', 'Pengurus OSIS', '2022', 'img/sertifikat 4.jpeg', 'Piagam Penghargaan sebagai kenang-kenangan.')">
-        <img src="img/sertifikat 4.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-pink text-white">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 4.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            4,
+            'Sertifikat 4',
+            'Pengurus OSIS',
+            '2022',
+            'img/sertifikat 4.jpeg',
+            'Piagam Penghargaan sebagai kenang-kenangan.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-pink text-white">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 5 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(5, 'Sertifikat 5', 'TECHNO FEST UIR VOL.1', '2025', 'img/sertifikat 5.jpeg', 'Pameran IT.')">
-        <img src="img/sertifikat 5.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-yellow text-black">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 5.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            5,
+            'Sertifikat 5',
+            'TECHNO FEST UIR VOL.1',
+            '2025',
+            'img/sertifikat 5.jpeg',
+            'Pameran IT.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-yellow text-black">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 6 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(6, 'Sertifikat 6', 'JUARA 1 PETANQUE', '2025', 'img/sertifikat 6.jpeg', 'PADA INVITASI CABANG OLAHRAGA PERMAINAN yang diselenggarakan oleh dinas pemuda dan olahraga provinsi DKI Jakarta.')">
-        <img src="img/sertifikat 6.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-blue text-white">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 6.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            6,
+            'Sertifikat 6',
+            'JUARA 1 PETANQUE',
+            '2025',
+            'img/sertifikat 6.jpeg',
+            'PADA INVITASI CABANG OLAHRAGA PERMAINAN yang diselenggarakan oleh dinas pemuda dan olahraga provinsi DKI Jakarta.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">
+          Lihat Detail
+        </button>
       </div>
 
       <!-- Sertifikat 7 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 cursor-pointer"
-        onclick="showCertificateDetail(7, 'Sertifikat 7', 'WOEBINAR DESAIN SERI #4 TAHUN 2026', '2026', 'img/sertifikat 7.jpeg', 'Language, Data and AI: NLP Innovations to Address Indonesia Challenges.')">
-        <img src="img/sertifikat 7.jpeg" class="border-2 border-black mb-4">
-        <button class="neo-btn w-full py-3 bg-neo-green text-black">Lihat Detail</button>
+      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+        <div class="h-[220px] overflow-hidden border-2 border-black">
+          <img src="img/sertifikat 7.jpeg" class="w-full h-full object-cover">
+        </div>
+        <button
+          onclick="showCertificateDetail(
+            7,
+            'Sertifikat 7',
+            'WEBINAR DESAIN SERI #4 TAHUN 2026',
+            '2026',
+            'img/sertifikat 7.jpeg',
+            'Language, Data and AI: NLP Innovations to Address Indonesia Challenges.'
+          )"
+          class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">
+          Lihat Detail
+        </button>
       </div>
 
     </div>
@@ -1116,10 +1094,10 @@ function closeCertificateModal() {
       </span>
     </h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+    <div class="bento-grid">
 
       <!-- INFO -->
-      <div>
+      <div class="col-span-12 lg:col-span-4">
         <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">
           Informasi Kontak
         </h3>
@@ -1163,58 +1141,58 @@ function closeCertificateModal() {
       </div>
 
       <!-- FORM -->
- <div>
-  <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">
-    Kirim Pesan
-  </h3>
+      <div class="col-span-12 lg:col-span-8">
+        <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">
+          Kirim Pesan
+        </h3>
 
-  <form action="https://formsubmit.co/sahrulsyahrull07@gmail.com" method="POST" class="space-y-6">
+        <form action="https://formsubmit.co/sahrulsyahrull07@gmail.com" method="POST" class="space-y-6">
 
-    <div class="relative">
-      <input type="text" name="name"
-        class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-        placeholder=" " required>
-      <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-        Nama Anda
-      </label>
-    </div>
+          <div class="relative">
+            <input type="text" name="name"
+              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
+              placeholder=" " required>
+            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
+              Nama Anda
+            </label>
+          </div>
 
-    <div class="relative">
-      <input type="email" name="email"
-        class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-        placeholder=" " required>
-      <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-        Email Anda
-      </label>
-    </div>
+          <div class="relative">
+            <input type="email" name="email"
+              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
+              placeholder=" " required>
+            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
+              Email Anda
+            </label>
+          </div>
 
-    <div class="relative">
-      <input type="text" name="subject"
-        class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-        placeholder=" " required>
-      <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-        Subjek
-      </label>
-    </div>
+          <div class="relative">
+            <input type="text" name="subject"
+              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
+              placeholder=" " required>
+            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
+              Subjek
+            </label>
+          </div>
 
-    <div class="relative">
-      <textarea name="message" rows="5"
-        class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-        placeholder=" " required></textarea>
-      <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-        Pesan
-      </label>
-    </div>
+          <div class="relative">
+            <textarea name="message" rows="5"
+              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
+              placeholder=" " required></textarea>
+            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
+              Pesan
+            </label>
+          </div>
 
-    <!-- TAMBAHAN -->
-    <input type="hidden" name="_captcha" value="false">
+          <!-- TAMBAHAN -->
+          <input type="hidden" name="_captcha" value="false">
 
-    <button type="submit" class="neo-btn w-full py-4 bg-black text-white text-xl uppercase">
-      <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
-    </button>
+          <button type="submit" class="neo-btn w-full py-4 bg-black text-white text-xl uppercase">
+            <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
+          </button>
 
-  </form>
-</div>
+        </form>
+      </div>
 
     </div>
   </div>
