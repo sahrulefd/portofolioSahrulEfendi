@@ -7,8 +7,7 @@
   <title>Sahrul Efendi Portfolio - Web Dev</title>
   <meta name="description"
     content="Official Sahrul Portfolio. Menampilkan project web development dan Profil Tentang Sahrul Efendi.">
-  <link href="https://fonts.googleapis.com/css2?
-  family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,8 +25,7 @@
         "https://www.linkedin.com/in/sahrul-efendi-4833923a0/",
         "https://www.instagram.com/sahrulefendi"
       ],
-  
-      "description": "Saya Sahrul Efendi, mahasiswa S1 Teknik Informatika di Universitas Islam Riau (UIR) yang memiliki minat dalam pengembangan web dan infrastruktur jaringan. Saya menikmati proses membangun pengalaman digital yang tidak hanya menarik secara visual, tetapi juga fungsional dan efisien. Dengan latar belakang sebagai Admin Jaringan & Web Developer, saya terbiasa menggabungkan pemahaman teknis di bidang jaringan dan teknologi web untuk menciptakan solusi yang praktis dan terintegrasi. Selama perkuliahan, saya telah mengerjakan berbagai proyek, mulai dari website sederhana hingga aplikasi yang lebih kompleks, serta implementasi sistem jaringan.""
+      "description": "Saya Sahrul Efendi, mahasiswa S1 Teknik Informatika di Universitas Islam Riau (UIR) yang memiliki minat dalam pengembangan web dan infrastruktur jaringan. Saya menikmati proses membangun pengalaman digital yang tidak hanya menarik secara visual, tetapi juga fungsional dan efisien. Dengan latar belakang sebagai Admin Jaringan & Web Developer, saya terbiasa menggabungkan pemahaman teknis di bidang jaringan dan teknologi web untuk menciptakan solusi yang praktis dan terintegrasi. Selama perkuliahan, saya telah mengerjakan berbagai proyek, mulai dari website sederhana hingga aplikasi yang lebih kompleks, serta implementasi sistem jaringan."
     }
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -181,8 +179,6 @@
       box-shadow: 8px 8px 0px 0px #000000;
     }
 
-    /* End marquee animation */
-
     .project-card {
       background: #FFFFFF;
       border: 4px solid #000000;
@@ -213,7 +209,7 @@
 
     .modal.show {
       display: flex;
-      animation: fadeIn 0.3s ease-out;
+      animation: modalSlideIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
     }
 
     .modal-content {
@@ -224,7 +220,6 @@
       max-width: 90vw;
       max-height: 90vh;
       overflow-y: auto;
-      animation: scaleIn 0.3s ease-out;
     }
 
     .floating-label {
@@ -289,7 +284,6 @@
       box-shadow: 2px 2px 0px 0px #000000;
     }
 
-
     .testimonial-card {
       background: #FFFFFF;
       border: 3px solid #000000;
@@ -298,6 +292,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      animation: fadeInUp 0.6s ease-out forwards;
     }
 
     .testimonial-card:hover {
@@ -310,7 +305,6 @@
         opacity: 0;
         transform: translateY(30px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -322,51 +316,26 @@
         opacity: 0;
         transform: translateX(-20px);
       }
-
       to {
         opacity: 1;
         transform: translateX(0);
       }
     }
 
-    .testimonial-card {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-
-    .testimonial-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .testimonial-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .testimonial-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
+    .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+    .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+    .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
 
     .testimonial-stat {
       animation: slideInCard 0.6s ease-out forwards;
     }
 
-    .testimonial-stat:nth-child(1) {
-      animation-delay: 0.4s;
-    }
-
-    .testimonial-stat:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-
-    .testimonial-stat:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    .testimonial-stat:nth-child(4) {
-      animation-delay: 0.7s;
-    }
+    .testimonial-stat:nth-child(1) { animation-delay: 0.4s; }
+    .testimonial-stat:nth-child(2) { animation-delay: 0.5s; }
+    .testimonial-stat:nth-child(3) { animation-delay: 0.6s; }
+    .testimonial-stat:nth-child(4) { animation-delay: 0.7s; }
 
     @media (hover: none) and (pointer: coarse) {
-
       .skill-card:active,
       .project-card:active,
       .testimonial-card:active {
@@ -401,114 +370,159 @@
       transform: scale(1.3);
     }
 
-    .contribution-day.level-0 {
-      background-color: rgba(48, 54, 61, 0.4);
+    .contribution-day.level-0 { background-color: rgba(48, 54, 61, 0.4); }
+    .contribution-day.level-1 { background-color: #0e4429; }
+    .contribution-day.level-2 { background-color: #006d32; }
+    .contribution-day.level-3 { background-color: #26a641; }
+    .contribution-day.level-4 { background-color: #39d353; }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.5rem;
     }
 
-    .contribution-day.level-1 {
-      background-color: #0e4429;
+    .bento-card {
+      background: white;
+      border: 4px solid black;
+      box-shadow: 8px 8px 0px black;
+      transition: 0.2s ease;
+      overflow: hidden;
+      position: relative;
     }
 
-    .contribution-day.level-2 {
-      background-color: #006d32;
+    .bento-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 12px 12px 0px black;
     }
 
-    .contribution-day.level-3 {
-      background-color: #26a641;
+    .bento-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
     }
 
-    .contribution-day.level-4 {
-      background-color: #39d353;
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
 
-    .dragging {
-      animation: none !important;
-      transition: none !important;
-      z-index: 40 !important;
+    #certificates img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    @keyframes slideDownRope {
-      0% { transform: translateY(-200px); opacity: 0; }
-      60% { transform: translateY(20px); opacity: 1; }
-      80% { transform: translateY(-10px); }
-      100% { transform: translateY(0); opacity: 1; }
+    /* ==========================================================================
+       Enhanced Animations and Interactions (Neubrutalism Harmonized)
+       ========================================================================== */
+    @keyframes pageLoad {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .animate-slide-down-rope {
-      animation: slideDownRope 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    body {
+      animation: pageLoad 0.5s ease-out;
     }
 
-    /* Scroll Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      will-change: transform, opacity;
+    a, button {
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
     }
 
-    .reveal-up { transform: translateY(60px); }
-    .reveal-down { transform: translateY(-60px); }
-    .reveal-left { transform: translateX(-60px); }
-    .reveal-right { transform: translateX(60px); }
-    .reveal-scale { transform: scale(0.8); }
-
-    .reveal.active {
-      opacity: 1 !important;
-      transform: translate(0) scale(1) !important;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
-    .delay-300 { transition-delay: 300ms; }
-    .delay-400 { transition-delay: 400ms; }
-    .delay-500 { transition-delay: 500ms; }
+    @keyframes buttonPress {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(2px, 2px); }
+    }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1.5rem;
-}
+    button:active {
+      animation: buttonPress 0.1s ease-out forwards;
+    }
 
-.bento-card {
-  background: white;
-  border: 4px solid black;
-  box-shadow: 8px 8px 0px black;
-  transition: 0.2s ease;
-  overflow: hidden;
-  position: relative;
-}
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #000000;
+      outline-offset: 2px;
+    }
 
-.bento-card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 12px 12px 0px black;
-}
+    @media (hover: none) and (pointer: coarse) {
+      a, button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+      }
+      .bento-card, .skill-card {
+        transition: transform 0.1s, box-shadow 0.1s;
+      }
+      .bento-card:active, .skill-card:active {
+        transform: scale(0.98);
+      }
+    }
 
-.bento-title {
-  font-size: 1.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1;
-}
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9) rotate(-1deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
 
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-#certificates img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .loading {
+      background: linear-gradient(90deg, #E5E5E5 25%, #F0F0F0 50%, #E5E5E5 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    ::selection {
+      background-color: #FFD600;
+      color: #000000;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F5F5F5;
+      border-left: 3px solid #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #000000;
+      border: 2px solid #F5F5F5;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FFD600;
+    }
   </style>
 </head>
+
 <script>
 function showCertificateDetail(id, title, org, year, image, desc) {
   document.getElementById("certTitle").innerText = title + " (" + year + ")";
   document.getElementById("certOrganization").innerText = org;
   document.getElementById("certDescription").innerText = desc;
   document.getElementById("certImage").src = image;
-
   document.getElementById("certificateModal").classList.remove("hidden");
 }
 
@@ -518,7 +532,7 @@ function closeCertificateModal() {
 </script>
 
 <body class="bg-neo-bg text-black font-sans grid-pattern">
-  <!-- Enhanced Header with Language Toggle -->
+  <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
     <div class="container mx-auto px-4 sm:px-6 py-4">
       <div class="flex justify-between items-center">
@@ -527,29 +541,15 @@ function closeCertificateModal() {
         </a>
         <!-- Navigation -->
         <nav class="hidden md:flex space-x-6 lg:space-x-8">
-          <a href="#home"
-            class="nav-link active py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-yellow px-2 transition-all"
-            data-translate="nav-home">Home</a>
-          <a href="#about"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-pink hover:text-white px-2 transition-all"
-            data-translate="nav-about">Tentang</a>
-          <a href="#projects"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-blue hover:text-white px-2 transition-all"
-            data-translate="nav-projects">Proyek</a>
-          <a href="#skills"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-green px-2 transition-all"
-            data-translate="nav-skills">Keahlian</a>
-          <a href="#certificates"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-purple hover:text-white px-2 transition-all"
-            data-translate="nav-certificates">Sertifikat</a>
-          <a href="#github"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-yellow px-2 transition-all"
-            data-translate="nav-github">Github</a>
-          <a href="#contact"
-            class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-pink hover:text-white px-2 transition-all"
-            data-translate="nav-contact">Kontak</a>
+          <a href="#home" class="nav-link active py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-yellow px-2 transition-all" data-translate="nav-home">Home</a>
+          <a href="#about" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-pink hover:text-white px-2 transition-all" data-translate="nav-about">Tentang</a>
+          <a href="#projects" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-blue hover:text-white px-2 transition-all" data-translate="nav-projects">Proyek</a>
+          <a href="#skills" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-green px-2 transition-all" data-translate="nav-skills">Keahlian</a>
+          <a href="#certificates" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-purple hover:text-white px-2 transition-all" data-translate="nav-certificates">Sertifikat</a>
+          <a href="#github" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-yellow px-2 transition-all" data-translate="nav-github">Github</a>
+          <a href="#contact" class="nav-link py-2 text-sm lg:text-base font-bold text-black hover:bg-neo-pink hover:text-white px-2 transition-all" data-translate="nav-contact">Kontak</a>
         </nav>
-        <!-- Language Toggle Button -->
+        <!-- Language Toggle -->
         <div class="flex items-center gap-4">
           <button id="lang-toggle" class="neo-btn px-4 py-2 bg-neo-purple text-white">
             <span class="lang-text">ID</span>
@@ -560,933 +560,352 @@ function closeCertificateModal() {
         </div>
       </div>
       <!-- Mobile Menu -->
-      <div id="mobile-menu"
-        class="md:hidden hidden mt-4 pb-4 space-y-2 bg-white border-t-2 border-black p-4 shadow-neo">
-        <a href="#home" class="block py-2 font-bold text-black hover:bg-neo-yellow px-2"
-          data-translate="nav-home">Home</a>
-        <a href="#about" class="block py-2 font-bold text-black hover:bg-neo-pink px-2 hover:text-white"
-          data-translate="nav-about">Tentang</a>
-        <a href="#projects" class="block py-2 font-bold text-black hover:bg-neo-blue px-2 hover:text-white"
-          data-translate="nav-projects">Proyek</a>
-        <a href="#skills" class="block py-2 font-bold text-black hover:bg-neo-green px-2"
-          data-translate="nav-skills">Keahlian</a>
-        <a href="#certificates" class="block py-2 font-bold text-black hover:bg-neo-purple px-2 hover:text-white"
-          data-translate="nav-certificates">Sertifikat</a>
-        <a href="#testimonial" class="block py-2 font-bold text-black hover:bg-neo-orange px-2 hover:text-white"
-          data-translate="nav-testimonial">Testimonial</a>
-        <a href="#github" class="block py-2 font-bold text-black hover:bg-neo-yellow px-2"
-          data-translate="nav-github">Github</a>
-        <a href="#contact" class="block py-2 font-bold text-black hover:bg-neo-pink px-2 hover:text-white"
-          data-translate="nav-contact">Kontak</a>
+      <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 space-y-2 bg-white border-t-2 border-black p-4 shadow-neo">
+        <a href="#home" class="block py-2 font-bold text-black hover:bg-neo-yellow px-2" data-translate="nav-home">Home</a>
+        <a href="#about" class="block py-2 font-bold text-black hover:bg-neo-pink px-2 hover:text-white" data-translate="nav-about">Tentang</a>
+        <a href="#projects" class="block py-2 font-bold text-black hover:bg-neo-blue px-2 hover:text-white" data-translate="nav-projects">Proyek</a>
+        <a href="#skills" class="block py-2 font-bold text-black hover:bg-neo-green px-2" data-translate="nav-skills">Keahlian</a>
+        <a href="#certificates" class="block py-2 font-bold text-black hover:bg-neo-purple px-2 hover:text-white" data-translate="nav-certificates">Sertifikat</a>
+        <a href="#github" class="block py-2 font-bold text-black hover:bg-neo-yellow px-2" data-translate="nav-github">Github</a>
+        <a href="#contact" class="block py-2 font-bold text-black hover:bg-neo-pink px-2 hover:text-white" data-translate="nav-contact">Kontak</a>
       </div>
     </div>
   </header>
 
- <!-- Enhanced Hero Section -->
-<section id="home" class="min-h-screen pt-32 pb-20 px-4 bg-neo-bg grid-pattern">
-  <div class="max-w-7xl mx-auto bento-grid">
-
-    <!-- PROFILE -->
-    <div class="bento-card col-span-12 lg:col-span-7 p-10 bg-neo-yellow">
-      <p class="font-black uppercase mb-4">
-        Halo, Saya
-      </p>
-
-      <h1 class="text-5xl md:text-7xl font-black uppercase leading-none mb-6">
-        Sahrul Efendi
-      </h1>
-
-      <div class="inline-block bg-black text-white px-4 py-2 border-4 border-black text-xl font-black uppercase">
-        Web Developer
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen pt-32 pb-20 px-4 bg-neo-bg grid-pattern">
+    <div class="max-w-7xl mx-auto bento-grid">
+      <!-- PROFILE -->
+      <div class="bento-card col-span-12 lg:col-span-7 p-10 bg-neo-yellow">
+        <p class="font-black uppercase mb-4">Halo, Saya</p>
+        <h1 class="text-5xl md:text-7xl font-black uppercase leading-none mb-6">Sahrul Efendi</h1>
+        <div class="inline-block bg-black text-white px-4 py-2 border-4 border-black text-xl font-black uppercase">Web Developer</div>
+        <p class="mt-8 text-lg font-bold max-w-2xl"> Mahasiswa Teknik Informatika UIR yang fokus pada web development, UI modern, dan pengembangan sistem informasi.</p>
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a href="#projects" class="neo-btn px-6 py-3 bg-neo-blue text-white">Lihat Project</a>
+          <a href="https://wa.me/6285833107599" class="neo-btn px-6 py-3 bg-neo-green">WhatsApp</a>
+        </div>
       </div>
-
-      <p class="mt-8 text-lg font-bold max-w-2xl">
-        Mahasiswa Teknik Informatika UIR yang fokus pada web development,
-        UI modern, dan pengembangan sistem informasi.
-      </p>
-
-      <div class="flex flex-wrap gap-4 mt-10">
-        <a href="#projects" class="neo-btn px-6 py-3 bg-neo-blue text-white">
-          Lihat Project
-        </a>
-
-        <a href="https://wa.me/6285833107599"
-          class="neo-btn px-6 py-3 bg-neo-green">
-          WhatsApp
-        </a>
+      <!-- PHOTO -->
+      <div class="bento-card col-span-12 lg:col-span-5 bg-neo-pink p-0 min-h-[400px]">
+        <img src="img/profil.jpg" class="w-full h-full object-cover">
+      </div>
+      <!-- SMALL INFO -->
+      <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-blue text-white">
+        <div class="text-5xl mb-4"><i class="fab fa-github"></i></div>
+        <h3 class="bento-title">Github</h3>
+        <p class="font-bold mt-2">Open Source & Projects</p>
+      </div>
+      <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-green">
+        <div class="text-5xl mb-4"><i class="fas fa-code"></i></div>
+        <h3 class="bento-title">Fullstack</h3>
+        <p class="font-bold mt-2">Laravel, Vue, Tailwind, PHP</p>
+      </div>
+      <div class="bento-card col-span-12 lg:col-span-6 p-8 bg-white">
+        <h3 class="bento-title mb-4">Tentang Saya</h3>
+        <p class="font-medium leading-relaxed"> Saya mahasiswa S1 Teknik Informatika Universitas Islam Riau yang aktif mengembangkan website, sistem informasi, dan UI modern dengan pendekatan kreatif.</p>
       </div>
     </div>
-
-    <!-- PHOTO -->
-    <div class="bento-card col-span-12 lg:col-span-5 bg-neo-pink p-0 min-h-[400px]">
-      <img src="img/profil.jpg"
-        class="w-full h-full object-cover">
-    </div>
-
-    <!-- SMALL INFO -->
-    <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-blue text-white">
-      <div class="text-5xl mb-4">
-        <i class="fab fa-github"></i>
-      </div>
-
-      <h3 class="bento-title">
-        Github
-      </h3>
-
-      <p class="font-bold mt-2">
-        Open Source & Personal Projects
-      </p>
-    </div>
-
-    <div class="bento-card col-span-6 lg:col-span-3 p-6 bg-neo-green">
-      <div class="text-5xl mb-4">
-        <i class="fas fa-code"></i>
-      </div>
-
-      <h3 class="bento-title">
-        Fullstack
-      </h3>
-
-      <p class="font-bold mt-2">
-        Laravel, Vue, Tailwind, PHP
-      </p>
-    </div>
-
-    <div class="bento-card col-span-12 lg:col-span-6 p-8 bg-white">
-      <h3 class="bento-title mb-4">
-        Tentang Saya
-      </h3>
-
-      <p class="font-medium leading-relaxed">
-        Saya mahasiswa S1 Teknik Informatika Universitas Islam Riau
-        yang aktif mengembangkan website, sistem informasi,
-        dan UI modern dengan pendekatan kreatif.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- Simple Projects Section -->
-<section id="projects" class="py-24 px-4 bg-neo-blue">
-  <div class="max-w-7xl mx-auto">
-
-    <h2 class="text-5xl font-black uppercase mb-14 text-center">
-      PROJECT
-    </h2>
-
-    <div class="bento-grid">
-
-      <!-- MAIN PROJECT -->
-      <div class="bento-card col-span-12 lg:col-span-8 bg-white p-8">
-
-        <div class="flex justify-between items-start flex-wrap gap-6">
-
-          <div>
-            <h3 class="text-4xl font-black uppercase mb-4">
-              Portfolio Website
-            </h3>
-
-            <p class="font-bold max-w-2xl">
-              Website portfolio.
-            </p>
-          </div>
-
-          <a href="https://www.sahrulefendi.my.id"
-            target="_blank"
-            class="neo-btn px-6 py-3">
-            Live Demo
-          </a>
-
-        </div>
-
-        <div class="mt-10 h-72 overflow-hidden border-4 border-black">
-          <img src="img/portofolio.png"
-            class="w-full h-full object-cover">
-        </div>
-      </div>
-
-      <!-- SMALL CARD -->
-      <div class="bento-card col-span-6 lg:col-span-4 bg-neo-yellow p-6">
-        <h3 class="text-2xl font-black uppercase">
-          Laravel
-        </h3>
-
-        <p class="mt-4 font-bold">
-          Sistem informasi & CRUD apps.
-        </p>
-      </div>
-
-      <div class="bento-card col-span-6 lg:col-span-4 bg-neo-pink text-white p-6">
-        <h3 class="text-2xl font-black uppercase">
-          UI Design
-        </h3>
-
-        <p class="mt-4 font-bold">
-          Figma & modern interface design.
-        </p>
-      </div>
-
-      <div class="bento-card col-span-12 lg:col-span-8 bg-neo-green p-8">
-        <h3 class="text-3xl font-black uppercase mb-4">
-          Tech Stack
-        </h3>
-
-        <div class="flex flex-wrap gap-3">
-
-          <span class="px-4 py-2 bg-white border-2 border-black font-black">
-            HTML
-          </span>
-
-          <span class="px-4 py-2 bg-white border-2 border-black font-black">
-            CSS
-          </span>
-
-          <span class="px-4 py-2 bg-white border-2 border-black font-black">
-            JavaScript
-          </span>
-
-          <span class="px-4 py-2 bg-white border-2 border-black font-black">
-            Vue
-          </span>
-
-          <span class="px-4 py-2 bg-white border-2 border-black font-black">
-            Laravel
-          </span>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Enhanced Skills Section -->
-<section id="skills" class="py-20 sm:py-32 bg-neo-bg">
-  <div class="container mx-auto px-4 sm:px-6">
-    <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter reveal reveal-up">
-      <span
-        class="bg-neo-green text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform rotate-1 hover:-rotate-1 transition-transform duration-300 cursor-default">
-        Keahlian
-      </span>
-    </h2>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-
-        <!-- FRONTEND -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-html5"></i></div>
-          <div class="font-black text-sm uppercase">HTML5</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-css3-alt"></i></div>
-          <div class="font-black text-sm uppercase">CSS3</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-js"></i></div>
-          <div class="font-black text-sm uppercase">JavaScript</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-wind"></i></div>
-          <div class="font-black text-sm uppercase">Tailwind</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-bootstrap"></i></div>
-          <div class="font-black text-sm uppercase">Bootstrap</div>
-        </div>
-
-        <!-- BACKEND -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-php"></i></div>
-          <div class="font-black text-sm uppercase">PHP</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-laravel"></i></div>
-          <div class="font-black text-sm uppercase">Laravel</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-database"></i></div>
-          <div class="font-black text-sm uppercase">MySQL</div>
-        </div>
-
-        <!-- NEW SKILLS -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-python"></i></div>
-          <div class="font-black text-sm uppercase">Python</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-vuejs"></i></div>
-          <div class="font-black text-sm uppercase">Vue</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-image"></i></div>
-          <div class="font-black text-sm uppercase">PicsayPro</div>
-        </div>
-
-        <!-- NETWORK -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-network-wired"></i></div>
-          <div class="font-black text-sm uppercase">Cisco</div>
-        </div>
-
-        <!-- DESIGN -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-figma"></i></div>
-          <div class="font-black text-sm uppercase">Figma</div>
-        </div>
-
-        <!-- TOOLS -->
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fab fa-github"></i></div>
-          <div class="font-black text-sm uppercase">GitHub</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-rocket"></i></div>
-          <div class="font-black text-sm uppercase">Vercel</div>
-        </div>
-
-        <div class="bento-card p-6 text-center bg-white">
-          <div class="text-4xl mb-3"><i class="fas fa-envelope"></i></div>
-          <div class="font-black text-sm uppercase">Postman</div>
-        </div>
-
-    </div>
-  </div>
-</section>
-
- <!-- Certificates Section -->
-  <!-- Certificate Detail Modal -->
-<div id="certificateModal" class="modal hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-  <div class="modal-content bg-white max-w-md w-full p-6 border-4 border-black shadow-neo-xl">
-
-    <div class="flex justify-between items-center mb-4 border-b-4 border-black pb-2">
-      <h3 class="text-xl font-black uppercase">Detail Sertifikat</h3>
-      <button onclick="closeCertificateModal()" class="text-xl">
-        ✖
-      </button>
-    </div>
-
-    <!-- GAMBAR -->
-    <img id="certImage" src="" class="w-full mb-4 border-2 border-black hidden">
-
-    <h4 id="certTitle" class="text-lg font-black mb-1"></h4>
-    <p id="certOrganization" class="text-blue-600 font-bold text-sm mb-2"></p>
-    <p id="certDescription" class="text-sm"></p>
-
-    <button onclick="closeCertificateModal()"
-      class="neo-btn w-full mt-4 py-2 bg-neo-pink text-white">
-      Tutup
-    </button>
-
-  </div>
-</div>
-<section id="certificates" class="py-20 sm:py-32 bg-neo-yellow border-y-8 border-black">
-  <div class="container mx-auto px-4 sm:px-6">
-
-    <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter">
-      <span
-        class="bg-white text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform -rotate-1 hover:rotate-1 transition-transform duration-300">
-        Sertifikat
-      </span>
-    </h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Sertifikat 1 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 1.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            1,
-            'Sertifikat 1',
-            'JUARA II POMNAS XIX JATENG',
-            '2025',
-            'img/sertifikat 1.jpeg',
-            'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan POMNAS XIX JATENG tahun 2025.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 2 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 2.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            2,
-            'Sertifikat 2',
-            '2nd RUNNER UP AT THE INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025',
-            '2025',
-            'img/sertifikat 2.jpeg',
-            'Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-purple text-white">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 3 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 3.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            3,
-            'Sertifikat 3',
-            'Seminar Nasional',
-            '2023',
-            'img/sertifikat 3.jpeg',
-            'Mengikuti Seminar Nasional Muda Berkarya Di Era Digital diselenggarakan oleh Himatif Universitas Islam Riau.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 4 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 4.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            4,
-            'Sertifikat 4',
-            'Pengurus OSIS',
-            '2022',
-            'img/sertifikat 4.jpeg',
-            'Piagam Penghargaan sebagai kenang-kenangan.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-pink text-white">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 5 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 5.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            5,
-            'Sertifikat 5',
-            'TECHNO FEST UIR VOL.1',
-            '2025',
-            'img/sertifikat 5.jpeg',
-            'Pameran IT.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-yellow text-black">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 6 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 6.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            6,
-            'Sertifikat 6',
-            'JUARA 1 PETANQUE',
-            '2025',
-            'img/sertifikat 6.jpeg',
-            'PADA INVITASI CABANG OLAHRAGA PERMAINAN yang diselenggarakan oleh dinas pemuda dan olahraga provinsi DKI Jakarta.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 7 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 7.jpeg" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            7,
-            'Sertifikat 7',
-            'WEBINAR DESAIN SERI #4 TAHUN 2026',
-            '2026',
-            'img/sertifikat 7.jpeg',
-            'Language, Data and AI: NLP Innovations to Address Indonesia Challenges.'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">
-          Lihat Detail
-        </button>
-      </div>
-
-      <!-- Sertifikat 8 -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
-        <div class="h-[220px] overflow-hidden border-2 border-black">
-          <img src="img/sertifikat 8.png" class="w-full h-full object-cover">
-        </div>
-        <button
-          onclick="showCertificateDetail(
-            8,
-            'Sertifikat 8',
-            'Kuliah Umum Fakultas Teknik',
-            '2026',
-            'img/sertifikat 8.png',
-            'Sebagai Peserta Kuliah Umum Sovereign AI: From Depedency to Autonomy'
-          )"
-          class="neo-btn w-full py-3 mt-4 bg-neo-purple text-white">
-          Lihat Detail
-        </button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- GitHub Section -->
-<section id="github" class="py-20 sm:py-32 bg-neo-bg">
-  <div class="container mx-auto px-4 sm:px-6">
-
-    <h4 class="text-2xl sm:text-3xl font-black mb-10 text-center uppercase tracking-tighter">
-      <span class="bg-neo-blue text-white px-6 py-2 border-4 border-black shadow-neo">
-        GitHub Saya
-      </span>
-    </h4>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- AKUN UTAMA -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 text-center">
-        <h5 class="font-black mb-4">Akun Student</h5>
-
-        <p class="text-sm font-bold mb-6 text-gray-700">
-          Berisi project-project selama perkuliahan seperti website, sistem informasi, dan tugas pemrograman.
-        </p>
-
-        <a href="https://github.com/sahrulefendi16" target="_blank"
-          class="neo-btn px-6 py-3 bg-black text-white uppercase">
-          Kunjungi GitHub
-        </a>
-      </div>
-
-      <!-- AKUN KEDUA -->
-      <div class="bg-white border-4 border-black shadow-neo-lg p-6 text-center">
-        <h5 class="font-black mb-4">Akun Pribadi</h5>
-
-        <p class="text-sm font-bold mb-6 text-gray-700">
-          Digunakan untuk eksplorasi pribadi, eksperimen coding, dan pengembangan skill di luar perkuliahan.
-        </p>
-
-        <a href="https://github.com/sahrulefd" target="_blank"
-          class="neo-btn px-6 py-3 bg-black text-white uppercase">
-          Kunjungi GitHub
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- Enhanced Contact Section -->
-<section id="contact" class="py-20 sm:py-32 bg-neo-green border-y-8 border-black">
-  <div class="container mx-auto px-4 sm:px-6">
-    <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter">
-      <span
-        class="bg-white text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform -rotate-1 hover:rotate-1 transition-transform duration-300">
-        Hubungi Saya
-      </span>
-    </h2>
-
-    <div class="bento-grid">
-
-      <!-- INFO -->
-      <div class="col-span-12 lg:col-span-4">
-        <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">
-          Informasi Kontak
-        </h3>
-
-        <div class="space-y-6">
-
-          <!-- LOKASI -->
-          <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
-            <div class="w-12 h-12 border-2 border-black bg-neo-pink flex items-center justify-center mr-4">
-              <i class="fas fa-map-marker-alt text-white"></i>
-            </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 px-4 bg-neo-blue">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-5xl font-black uppercase mb-14 text-center">PROJECT</h2>
+      <div class="bento-grid">
+        <!-- 1. MAIN PROJECT: Portfolio Website -->
+        <div class="bento-card col-span-12 lg:col-span-8 bg-white p-8">
+          <div class="flex justify-between items-start flex-wrap gap-6">
             <div>
-              <h4 class="text-lg font-black mb-1 uppercase">Lokasi</h4>
-              <p class="text-black font-bold">Riau, Indonesia</p>
+              <h3 class="text-4xl font-black uppercase mb-4">Portfolio Website</h3>
+              <p class="font-bold max-w-2xl">Website portfolio neubrutalism.</p>
             </div>
+            <a href="https://www.sahrulefendi.my.id" target="_blank" class="neo-btn px-6 py-3">Live Demo</a>
           </div>
+          <div class="mt-10 h-72 overflow-hidden border-4 border-black">
+            <img src="img/portofolio.png" class="w-full h-full object-cover">
+          </div>
+        </div>
 
-          <!-- EMAIL -->
-          <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
-            <div class="w-12 h-12 border-2 border-black bg-neo-blue flex items-center justify-center mr-4">
-              <i class="fas fa-envelope text-white"></i>
-            </div>
+        <!-- 2. SMALL CARD: Laravel -->
+        <div class="bento-card col-span-6 lg:col-span-4 bg-neo-yellow p-6">
+          <h3 class="text-2xl font-black uppercase">Laravel</h3>
+          <p class="mt-4 font-bold">Sistem informasi & CRUD apps.</p>
+        </div>
+
+        <!-- 3. SMALL CARD: UI Design -->
+        <div class="bento-card col-span-6 lg:col-span-4 bg-neo-pink text-white p-6">
+          <h3 class="text-2xl font-black uppercase">UI Design</h3>
+          <p class="mt-4 font-bold">Figma & modern interface design.</p>
+        </div>
+
+        <!-- 4. KODE BARU: Panduan Academic Mobile App (GIF Aset) -->
+        <div class="bento-card col-span-12 lg:col-span-8 bg-white p-8">
+          <div class="flex justify-between items-start flex-wrap gap-6">
             <div>
-              <h4 class="text-lg font-black mb-1 uppercase">Email</h4>
-              <p class="text-black font-bold break-all">sahrulsyahrull07@gmail.com</p>
+              <div class="inline-block bg-neo-pink text-white px-3 py-1 border-2 border-black text-xs font-black uppercase mb-3">
+                Mobile Apps
+              </div>
+              <h3 class="text-4xl font-black uppercase mb-4">Panduan Academik</h3>
+              <p class="font-bold max-w-2xl text-gray-700">
+                Aplikasi Android berbasis React Native untuk mempermudah akses jadwal kuliah, 
+                informasi kelas, serta integrasi komunikasi native (Implicit Intent) langsung ke dosen via telepon dan email.
+              </p>
             </div>
+            <a href="https://github.com/sahrulefd/AplikasiPanduanAkademikMahasiswa.git" target="_blank" class="neo-btn px-6 py-3 bg-neo-yellow">
+              <i class="fab fa-github mr-2"></i>Repository
+            </a>
           </div>
-
-          <!-- WHATSAPP -->
-          <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
-            <div class="w-12 h-12 border-2 border-black bg-neo-yellow flex items-center justify-center mr-4">
-              <i class="fas fa-phone text-black"></i>
-            </div>
-            <div>
-              <h4 class="text-lg font-black mb-1 uppercase">WhatsApp</h4>
-              <p class="text-black font-bold">0858-3310-7599</p>
-            </div>
+          <!-- Wadah GIF dengan frame khusus neubrutalism -->
+          <div class="mt-10 h-80 overflow-hidden border-4 border-black bg-[#FAF8FC] flex justify-center items-center">
+            <img src="img/apkPAM.gif" alt="Demo Aplikasi Panduan Akademik" class="h-full object-contain p-2">
           </div>
+        </div>
 
+        <!-- 5. TECH STACK -->
+        <div class="bento-card col-span-12 lg:col-span-8 bg-neo-green p-8">
+          <h3 class="text-3xl font-black uppercase mb-4">Tech Stack</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">HTML</span>
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">CSS</span>
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">JavaScript</span>
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">Vue</span>
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">Laravel</span>
+            <span class="px-4 py-2 bg-white border-2 border-black font-black">React Native</span>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- FORM -->
-      <div class="col-span-12 lg:col-span-8">
-        <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">
-          Kirim Pesan
-        </h3>
-
-        <form action="https://formsubmit.co/sahrulsyahrull07@gmail.com" method="POST" class="space-y-6">
-
-          <div class="relative">
-            <input type="text" name="name"
-              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-              placeholder=" " required>
-            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-              Nama Anda
-            </label>
-          </div>
-
-          <div class="relative">
-            <input type="email" name="email"
-              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-              placeholder=" " required>
-            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-              Email Anda
-            </label>
-          </div>
-
-          <div class="relative">
-            <input type="text" name="subject"
-              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-              placeholder=" " required>
-            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-              Subjek
-            </label>
-          </div>
-
-          <div class="relative">
-            <textarea name="message" rows="5"
-              class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold"
-              placeholder=" " required></textarea>
-            <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">
-              Pesan
-            </label>
-          </div>
-
-          <!-- TAMBAHAN -->
-          <input type="hidden" name="_captcha" value="false">
-
-          <button type="submit" class="neo-btn w-full py-4 bg-black text-white text-xl uppercase">
-            <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
-          </button>
-
-        </form>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 sm:py-32 bg-neo-bg">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter">
+        <span class="bg-neo-green text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform rotate-1 hover:rotate-1">Keahlian</span>
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-html5"></i></div><div class="font-black text-sm uppercase">HTML5</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-css3-alt"></i></div><div class="font-black text-sm uppercase">CSS3</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-js"></i></div><div class="font-black text-sm uppercase">JavaScript</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-wind"></i></div><div class="font-black text-sm uppercase">Tailwind</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-bootstrap"></i></div><div class="font-black text-sm uppercase">Bootstrap</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-php"></i></div><div class="font-black text-sm uppercase">PHP</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-laravel"></i></div><div class="font-black text-sm uppercase">Laravel</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-database"></i></div><div class="font-black text-sm uppercase">MySQL</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-python"></i></div><div class="font-black text-sm uppercase">Python</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-vuejs"></i></div><div class="font-black text-sm uppercase">Vue</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-image"></i></div><div class="font-black text-sm uppercase">PicsayPro</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-network-wired"></i></div><div class="font-black text-sm uppercase">Cisco</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-figma"></i></div><div class="font-black text-sm uppercase">Figma</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fab fa-github"></i></div><div class="font-black text-sm uppercase">GitHub</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-rocket"></i></div><div class="font-black text-sm uppercase">Vercel</div></div>
+        <div class="bento-card p-6 text-center bg-white"><div class="text-4xl mb-3"><i class="fas fa-envelope"></i></div><div class="font-black text-sm uppercase">Postman</div></div>
       </div>
+    </div>
+  </section>
 
+  <!-- Certificates Section -->
+  <div id="certificateModal" class="modal hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div class="modal-content bg-white max-w-md w-full p-6 border-4 border-black shadow-neo-xl">
+      <div class="flex justify-between items-center mb-4 border-b-4 border-black pb-2">
+        <h3 class="text-xl font-black uppercase">Detail Sertifikat</h3>
+        <button onclick="closeCertificateModal()" class="text-xl">✖</button>
+      </div>
+      <img id="certImage" src="" class="w-full mb-4 border-2 border-black hidden">
+      <h4 id="certTitle" class="text-lg font-black mb-1"></h4>
+      <p id="certOrganization" class="text-blue-600 font-bold text-sm mb-2"></p>
+      <p id="certDescription" class="text-sm"></p>
+      <button onclick="closeCertificateModal()" class="neo-btn w-full mt-4 py-2 bg-neo-pink text-white">Tutup</button>
     </div>
   </div>
-</section>
 
-<!-- Enhanced Footer -->
-<footer class="py-12 bg-black text-white border-t-8 border-black">
-  <div class="container mx-auto px-4 sm:px-6">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-
-      <!-- NAMA -->
-      <div class="mb-8 md:mb-0">
-        <a href="#" class="text-2xl sm:text-3xl font-black uppercase tracking-tighter">
-          Sahrul <span class="bg-neo-yellow text-black px-2 border-2 border-white">Efendi</span>
-        </a>
+  <section id="certificates" class="py-20 sm:py-32 bg-neo-yellow border-y-8 border-black">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter">
+        <span class="bg-white text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform -rotate-1 hover:rotate-1">Sertifikat</span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Sertifikat 1 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 1.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(1,'Sertifikat 1','JUARA II POMNAS XIX JATENG','2025','img/sertifikat 1.jpeg','Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan POMNAS XIX JATENG tahun 2025.')" class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 2 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 2.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(2,'Sertifikat 2','2nd RUNNER UP AT THE INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025','2025','img/sertifikat 2.jpeg','Saya mendapatkan sertifikat ini setelah berpartisipasi dalam kegiatan INVITATIONAL PETANQUE INTERNATIONAL COMPETITION FOR STUDENT AND DOUBLE OPEN FKIP USK 2025.')" class="neo-btn w-full py-3 mt-4 bg-neo-purple text-white">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 3 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 3.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(3,'Sertifikat 3','Seminar Nasional','2023','img/sertifikat 3.jpeg','Mengikuti Seminar Nasional Muda Berkarya Di Era Digital diselenggarakan oleh Himatif Universitas Islam Riau.')" class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 4 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 4.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(4,'Sertifikat 4','Pengurus OSIS','2022','img/sertifikat 4.jpeg','Piagam Penghargaan sebagai kenang-kenangan.')" class="neo-btn w-full py-3 mt-4 bg-neo-pink text-white">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 5 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 5.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(5,'Sertifikat 5','TECHNO FEST UIR VOL.1','2025','img/sertifikat 5.jpeg','Pameran IT.')" class="neo-btn w-full py-3 mt-4 bg-neo-yellow text-black">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 6 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 6.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(6,'Sertifikat 6','JUARA 1 PETANQUE','2025','img/sertifikat 6.jpeg','PADA INVITASI CABANG OLAHRAGA PERMAINAN yang diselenggarakan oleh dinas pemuda dan olahraga provinsi DKI Jakarta.')" class="neo-btn w-full py-3 mt-4 bg-neo-blue text-white">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 7 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 7.jpeg" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(7,'Sertifikat 7','WEBINAR DESAIN SERI #4 TAHUN 2026','2026','img/sertifikat 7.jpeg','Language, Data and AI: NLP Innovations to Address Indonesia Challenges.')" class="neo-btn w-full py-3 mt-4 bg-neo-green text-black">Lihat Detail</button>
+        </div>
+        <!-- Sertifikat 8 -->
+        <div class="bg-white border-4 border-black shadow-neo-lg p-4 flex flex-col">
+          <div class="h-[220px] overflow-hidden border-2 border-black"><img src="img/sertifikat 8.png" class="w-full h-full object-cover"></div>
+          <button onclick="showCertificateDetail(8,'Sertifikat 8','Kuliah Umum Fakultas Teknik','2026','img/sertifikat 8.png','Sebagai Peserta Kuliah Umum Sovereign AI: From Dependency to Autonomy')" class="neo-btn w-full py-3 mt-4 bg-neo-purple text-white">Lihat Detail</button>
+        </div>
       </div>
-
-      <!-- SOSIAL MEDIA -->
-      <div class="flex space-x-6 mb-8 md:mb-0">
-
-        <!-- GitHub -->
-        <a href="https://github.com/sahrulefendi16" target="_blank"
-          class="neo-btn w-12 h-12 bg-neo-blue flex items-center justify-center text-white border-white">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/sahrul-efendi-3813533bb" target="_blank"
-          class="neo-btn w-12 h-12 bg-neo-purple flex items-center justify-center text-white border-white">
-          <i class="fab fa-linkedin-in text-xl"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/sahrulefd_" target="_blank"
-          class="neo-btn w-12 h-12 bg-neo-pink flex items-center justify-center text-white border-white">
-          <i class="fab fa-instagram text-xl"></i>
-        </a>
-
-        <!-- TikTok -->
-        <a href="https://www.tiktok.com/@sahrulefndi16" target="_blank"
-          class="neo-btn w-12 h-12 bg-white flex items-center justify-center text-black border-white">
-          <i class="fab fa-tiktok text-xl"></i>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.me/6285833107599" target="_blank"
-          class="neo-btn w-12 h-12 bg-neo-green flex items-center justify-center text-black border-white">
-          <i class="fab fa-whatsapp text-xl"></i>
-        </a>
-
-      </div>
-
-      <!-- COPYRIGHT -->
-      <div class="text-white font-bold uppercase text-xs">
-        © <span id="current-year">2026</span> Sahrul Efendi.
-      </div>
-
     </div>
-  </div>
-</footer>
-<!-- Enhanced JavaScript -->
-<script>
-  let currentLang = 'id';
-  let currentCarouselIndex = 0;
+  </section>
 
-  // TOGGLE BAHASA
-  document.getElementById('lang-toggle').addEventListener('click', function () {
-    currentLang = currentLang === 'id' ? 'en' : 'id';
-    document.querySelector('.lang-text').textContent = currentLang === 'id' ? 'EN' : 'ID';
-    updatePageTranslations();
-  });
+  <!-- GitHub Section -->
+  <section id="github" class="py-20 sm:py-32 bg-neo-bg">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h4 class="text-2xl sm:text-3xl font-black mb-10 text-center uppercase tracking-tighter">
+        <span class="bg-neo-blue text-white px-6 py-2 border-4 border-black shadow-neo">GitHub Saya</span>
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border-4 border-black shadow-neo-lg p-6 text-center">
+          <h5 class="font-black mb-4">Akun Student</h5>
+          <p class="text-sm font-bold mb-6 text-gray-700">Berisi project-project selama perkuliahan seperti website, sistem informasi, dan tugas pemrograman.</p>
+          <a href="https://github.com/sahrulefendi16" target="_blank" class="neo-btn px-6 py-3 bg-black text-white uppercase">Kunjungi GitHub</a>
+        </div>
+        <div class="bg-white border-4 border-black shadow-neo-lg p-6 text-center">
+          <h5 class="font-black mb-4">Akun Pribadi</h5>
+          <p class="text-sm font-bold mb-6 text-gray-700">Digunakan untuk eksplorasi pribadi, eksperimen coding, dan pengembangan skill di luar perkuliahan.</p>
+          <a href="https://github.com/sahrulefd" target="_blank" class="neo-btn px-6 py-3 bg-black text-white uppercase">Kunjungi GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  function updatePageTranslations() {
-    const transKeys = document.querySelectorAll('[data-translate]');
-    transKeys.forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (translations[currentLang] && translations[currentLang][key]) {
-        el.textContent = translations[currentLang][key];
-      }
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 sm:py-32 bg-neo-green border-y-8 border-black">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-16 text-center uppercase tracking-tighter">
+        <span class="bg-white text-black px-8 py-3 border-4 border-black shadow-neo-lg inline-block transform -rotate-1 hover:rotate-1">Hubungi Saya</span>
+      </h2>
+      <div class="bento-grid">
+        <div class="col-span-12 lg:col-span-4">
+          <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">Informasi Kontak</h3>
+          <div class="space-y-6">
+            <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
+              <div class="w-12 h-12 border-2 border-black bg-neo-pink flex items-center justify-center mr-4"><i class="fas fa-map-marker-alt text-white"></i></div>
+              <div><h4 class="text-lg font-black mb-1 uppercase">Lokasi</h4><p class="text-black font-bold">Riau, Indonesia</p></div>
+            </div>
+            <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
+              <div class="w-12 h-12 border-2 border-black bg-neo-blue flex items-center justify-center mr-4"><i class="fas fa-envelope text-white"></i></div>
+              <div><h4 class="text-lg font-black mb-1 uppercase">Email</h4><p class="text-black font-bold break-all">sahrulsyahrull07@gmail.com</p></div>
+            </div>
+            <div class="flex items-start p-6 bg-white border-4 border-black shadow-neo">
+              <div class="w-12 h-12 border-2 border-black bg-neo-yellow flex items-center justify-center mr-4"><i class="fas fa-phone text-black"></i></div>
+              <div><h4 class="text-lg font-black mb-1 uppercase">WhatsApp</h4><p class="text-black font-bold">0858-3310-7599</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-8">
+          <h3 class="text-2xl sm:text-3xl font-black mb-8 uppercase tracking-tight">Kirim Pesan</h3>
+          <form action="https://formsubmit.co/sahrulsyahrull07@gmail.com" method="POST" class="space-y-6">
+            <div class="relative">
+              <input type="text" name="name" class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold" placeholder=" " required>
+              <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">Nama Anda</label>
+            </div>
+            <div class="relative">
+              <input type="email" name="email" class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold" placeholder=" " required>
+              <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">Email Anda</label>
+            </div>
+            <div class="relative">
+              <input type="text" name="subject" class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold" placeholder=" " required>
+              <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">Subjek</label>
+            </div>
+            <div class="relative">
+              <textarea name="message" rows="5" class="form-input w-full px-4 py-4 bg-white border-4 border-black font-bold" placeholder=" " required></textarea>
+              <label class="floating-label absolute left-4 top-4 text-gray-500 font-bold uppercase text-xs">Pesan</label>
+            </div>
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="neo-btn w-full py-4 bg-black text-white text-xl uppercase"><i class="fas fa-paper-plane mr-2"></i> Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-white border-t-8 border-black">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+          <a href="#" class="text-2xl sm:text-3xl font-black uppercase tracking-tighter">Sahrul <span class="bg-neo-yellow text-black px-2 border-2 border-white">Efendi</span></a>
+        </div>
+        <div class="flex space-x-6 mb-8 md:mb-0">
+          <a href="https://github.com/sahrulefendi16" target="_blank" class="neo-btn w-12 h-12 bg-neo-blue flex items-center justify-center text-white border-white"><i class="fab fa-github text-xl"></i></a>
+          <a href="https://www.linkedin.com/in/sahrul-efendi-3813533bb" target="_blank" class="neo-btn w-12 h-12 bg-neo-purple flex items-center justify-center text-white border-white"><i class="fab fa-linkedin-in text-xl"></i></a>
+          <a href="https://www.instagram.com/sahrulefd_" target="_blank" class="neo-btn w-12 h-12 bg-neo-pink flex items-center justify-center text-white border-white"><i class="fab fa-instagram text-xl"></i></a>
+          <a href="https://www.tiktok.com/@sahrulefndi16" target="_blank" class="neo-btn w-12 h-12 bg-white flex items-center justify-center text-black border-white"><i class="fab fa-tiktok text-xl"></i></a>
+          <a href="https://wa.me/6285833107599" target="_blank" class="neo-btn w-12 h-12 bg-neo-green flex items-center justify-center text-black border-white"><i class="fab fa-whatsapp text-xl"></i></a>
+        </div>
+        <div class="text-white font-bold uppercase text-xs">© <span id="current-year">2026</span> Sahrul Efendi.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    let currentLang = 'id';
+
+    document.getElementById('lang-toggle').addEventListener('click', function () {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      document.querySelector('.lang-text').textContent = currentLang === 'id' ? 'EN' : 'ID';
     });
 
-    const titleText = currentLang === 'id'
-      ? "Web Developer & Mahasiswa TI"
-      : "Web Developer & IT Student";
-
-    typeEffect(document.getElementById("dev-title"), titleText, 80, 0);
-  }
-
-  // CAROUSEL
-  function moveCarousel(direction) {
-    const carousel = document.getElementById('projectCarousel');
-    const items = carousel.querySelectorAll('.carousel-item');
-    const itemCount = items.length;
-
-    const itemsPerView = window.innerWidth <= 768 ? 1 : 3;
-
-    currentCarouselIndex += direction;
-
-    if (currentCarouselIndex > itemCount - itemsPerView) {
-      currentCarouselIndex = 0;
-    } else if (currentCarouselIndex < 0) {
-      currentCarouselIndex = itemCount - itemsPerView;
+    function closeCertificateModal() {
+      const modal = document.getElementById('certificateModal');
+      modal.classList.add('hidden');
     }
 
-    const offset = -currentCarouselIndex * (100 / itemsPerView);
-    carousel.style.transform = `translateX(${offset}%)`;
-  }
-
-  // CERTIFICATE MODAL
-  function showCertificateDetail(id, title, organization, year, image, description) {
-    const modal = document.getElementById('certificateModal');
-    const img = document.getElementById('certImage');
-
-    if (img) {
-      img.src = image;
-      img.style.display = 'block';
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     }
 
-    document.getElementById('certTitle').textContent = title;
-    document.getElementById('certOrganization').textContent = organization + ' - ' + year;
-    document.getElementById('certDescription').textContent = description;
-
-    modal.classList.add('show');
-  }
-
-  function closeCertificateModal() {
-    const modal = document.getElementById('certificateModal');
-    const img = document.getElementById('certImage');
-
-    modal.classList.remove('show');
-
-    if (img) {
-      img.src = '';
-      img.style.display = 'none';
-    }
-  }
-
-  // MOBILE MENU
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  if (mobileMenuButton) {
-    mobileMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-
-  // TYPING EFFECT
-  function typeEffect(element, text, speed = 80, delay = 0) {
-    if (!element) return;
-
-    setTimeout(() => {
-      element.textContent = "";
-      let i = 0;
-
-      const timer = setInterval(() => {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-        } else {
-          clearInterval(timer);
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+          if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
         }
-      }, speed);
-    }, delay);
-  }
+      });
+    });
 
+    document.getElementById("current-year").textContent = new Date().getFullYear();
 
-  // SMOOTH SCROLL
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-
-        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.add("hidden");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         }
-      }
-    });
-  });
-
-  // YEAR
-  document.getElementById("current-year").textContent = new Date().getFullYear();
-
-  // ABOUT IMAGE ROTATE
-  let currentAngle = -3;
-  let hoverOffset = 0;
-  const aboutImgContainer = document.getElementById('about-img-container');
-
-  function updateAboutImageTransform() {
-    if (!aboutImgContainer) return;
-    aboutImgContainer.style.transform = `rotate(${currentAngle + hoverOffset}deg)`;
-  }
-
-  if (aboutImgContainer) {
-    aboutImgContainer.addEventListener('click', () => {
-      currentAngle += 20;
-      updateAboutImageTransform();
-    });
-
-    aboutImgContainer.addEventListener('mouseenter', () => {
-      hoverOffset = 8;
-      updateAboutImageTransform();
-    });
-
-    aboutImgContainer.addEventListener('mouseleave', () => {
-      hoverOffset = 0;
-      updateAboutImageTransform();
-    });
-  }
-
-  // SCROLL REVEAL
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  // DRAG SHAPES
-  document.querySelectorAll('.draggable-shape').forEach(shape => {
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    const start = (e) => {
-      isDragging = true;
-      const x = e.clientX || e.touches[0].clientX;
-      const y = e.clientY || e.touches[0].clientY;
-
-      const rect = shape.getBoundingClientRect();
-      offsetX = x - rect.left;
-      offsetY = y - rect.top;
-    };
-
-    const move = (e) => {
-      if (!isDragging) return;
-
-      const x = e.clientX || e.touches[0].clientX;
-      const y = e.clientY || e.touches[0].clientY;
-
-      shape.style.position = 'fixed';
-      shape.style.left = `${x - offsetX}px`;
-      shape.style.top = `${y - offsetY}px`;
-    };
-
-    const stop = () => isDragging = false;
-
-    shape.addEventListener('mousedown', start);
-    window.addEventListener('mousemove', move);
-    window.addEventListener('mouseup', stop);
-
-    shape.addEventListener('touchstart', start);
-    window.addEventListener('touchmove', move);
-    window.addEventListener('touchend', stop);
-  });
-
-  // ALERT PRIVATE REPO
-  function showPrivateAlert() {
-    const toast = document.createElement('div');
-    toast.className = 'fixed top-10 left-1/2 -translate-x-1/2 bg-neo-pink text-white px-6 py-3 border-4 border-black shadow-neo z-50';
-    toast.innerHTML = '🔒 Repository Private';
-
-    document.body.appendChild(toast);
-
-    setTimeout(() => toast.remove(), 3000);
-  }
-
-  // INIT
-  updatePageTranslations();
-</script>
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
 </body>
-
 </html>
