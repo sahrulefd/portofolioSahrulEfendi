@@ -1,222 +1,277 @@
-/* Enhanced Animations and Interactions */
+/* Sahrul Efendi Portfolio - Modern Premium Design System */
 
-/* Smooth Page Transitions */
-@keyframes pageLoad {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  --color-primary: #2563eb;
+  --color-secondary: #60a5fa;
+  --color-accent: #38bdf8;
+  --color-bg: #030712;
+  --color-surface: #111827;
+  --color-card: rgba(255, 255, 255, 0.03);
+  --color-card-hover: rgba(255, 255, 255, 0.06);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-hover: rgba(255, 255, 255, 0.16);
+}
+
+/* Base resets & scroll behavior */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 body {
-  animation: pageLoad 0.6s ease-out;
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+  background-attachment: fixed;
 }
 
-/* Hover Effects for Interactive Elements */
-a,
-button {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* Grid & dot pattern overlay */
+.grid-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 100%);
+  pointer-events: none;
 }
 
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
+/* Premium Glassmorphism */
+.glass-panel {
+  background: var(--color-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Enhanced Glow Effects */
-.hover\:shadow-glow:hover {
-  box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+.glass-panel:hover {
+  background: var(--color-card-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: 0 12px 40px 0 rgba(37, 99, 235, 0.15);
 }
 
-.hover\:shadow-glow-strong:hover {
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 191, 255, 0.3);
+/* Interactive Card Mouse Glow effect */
+.glow-card {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Card Lift Animation */
-@keyframes cardLift {
-  0% {
-    transform: translateY(0px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.glow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.1),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Interactive Buttons */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4), 0 0 15px rgba(56, 189, 248, 0.2);
+  filter: brightness(1.1);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  border: 2px solid #030712;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Animations and Transitions */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(5px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Specific delay classes */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Custom keyframes for custom decorations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
   }
-  100% {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px rgba(0, 191, 255, 0.2);
+  50% {
+    transform: translateY(-12px) rotate(2deg);
   }
 }
 
-.project-card:hover,
-.skill-card:hover,
-.certificate-card:hover {
-  animation: cardLift 0.4s ease-out forwards;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Button Press Animation */
-@keyframes buttonPress {
-  0% {
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    transform: scale(0.98);
-  }
-  100% {
+    opacity: 0.6;
     transform: scale(1.05);
   }
 }
 
-button:active {
-  animation: buttonPress 0.3s ease-out;
+.animate-pulse-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
 }
 
-/* Scroll Reveal Animation */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Typewriter blink cursor */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 0.75s step-end infinite;
+  color: var(--color-accent);
+  margin-left: 2px;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: var(--color-accent); }
 }
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Modal styling */
+.glass-modal {
+  background: rgba(3, 7, 18, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Floating Animation Enhancement */
-@keyframes floatSlow {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+/* Form floating label focus styles */
+.form-input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Pulse Animation for Important Elements */
-@keyframes pulseBorder {
-  0%,
-  100% {
-    border-color: rgba(0, 191, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
-  }
-  50% {
-    border-color: rgba(0, 191, 255, 0.8);
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
-  }
+.form-input:focus {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+  outline: none;
 }
 
-/* Focus States for Accessibility */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #00bfff;
-  outline-offset: 2px;
+.floating-label {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Mobile Touch-Friendly Enhancements */
-@media (hover: none) and (pointer: coarse) {
-  a,
-  button {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px 16px;
-  }
-
-  .project-card,
-  .skill-card,
-  .certificate-card {
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .project-card:active,
-  .skill-card:active,
-  .certificate-card:active {
-    transform: scale(0.98);
-  }
+.form-input:focus ~ .floating-label,
+.form-input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-26px) scale(0.85);
+  color: var(--color-accent);
 }
 
-/* Smooth Modal Animations */
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* Toast styling */
+.toast {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(100px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
 }
 
-.modal.show {
-  animation: modalSlideIn 0.3s ease-out;
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-/* Loading States */
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+/* Particle / Radial glow background markers */
+.glow-spot {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
 }
 
-.loading {
-  background: linear-gradient(90deg, #1a1a2e 25%, #2d2d4d 50%, #1a1a2e 75%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-}
-
-/* Text Selection Styling */
-::selection {
-  background-color: #00bfff;
-  color: #0f0f23;
-}
-
-::-moz-selection {
-  background-color: #00bfff;
-  color: #0f0f23;
-}
-
-/* Scrollbar Styling (Webkit browsers) */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(15, 15, 35, 0.5);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00bfff;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #00ffff;
+.glow-spot-cyan {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
 }
