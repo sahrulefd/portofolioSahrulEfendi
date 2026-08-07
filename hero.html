@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Hero Section Preview</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+          },
+          colors: {
+            primary: "#2563EB",
+            secondary: "#60A5FA",
+            accent: "#38BDF8",
+            darkbg: "#030712",
+          }
+        }
+      }
+    };
+  </script>
+  
+  <!-- Custom Hero stylesheet -->
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body class="bg-darkbg text-gray-300 font-sans overflow-x-hidden">
+
+  <!-- Upgraded Hero Section -->
+  <section id="hero-section">
+    <!-- Ambient Background Effects -->
+    <div class="aurora-container">
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
+    </div>
+    
+    <div class="floating-blur-circle floating-circle-1"></div>
+    <div class="floating-blur-circle floating-circle-2"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-noise-overlay"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- Main Loader -->
+    <div id="hero-loader">
+      <div class="relative flex flex-col items-center">
+        <div class="loader-glow"></div>
+        <svg class="w-24 h-24 transform -rotate-90">
+          <circle cx="48" cy="48" r="40" stroke="rgba(255, 255, 255, 0.05)" stroke-width="4" fill="transparent" />
+          <circle id="loading-circle-progress" cx="48" cy="48" r="40" stroke="url(#loaderGrad)" stroke-width="4" fill="transparent"
+                  stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round" class="transition-all duration-150" />
+          <defs>
+            <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#38BDF8" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div id="loader-percentage" class="absolute inset-0 flex items-center justify-center font-extrabold text-white text-lg font-mono">0%</div>
+        <span class="mt-6 text-xs font-bold tracking-widest text-gray-400 uppercase animate-pulse">Loading Experience</span>
+      </div>
+    </div>
+
+    <!-- Responsive Grid Layout -->
+    <div class="hero-content-container">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Side: Hero Text Info -->
+        <div class="lg:col-span-7 flex flex-col items-start text-left z-10">
+          <!-- Greeting Badge -->
+          <div class="hero-reveal-el inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-accent font-semibold text-xs sm:text-sm mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span data-translate="hero-greet-badge">Halo 👋</span>
+          </div>
+          
+          <!-- Name Heading with Typing Effect -->
+          <h1 class="hero-reveal-el delay-100 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none mb-4">
+            Saya <span id="hero-name-typewriter" class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">Sahrul Efendi</span>
+          </h1>
+          
+          <!-- Dynamic Role Subheading -->
+          <h2 class="hero-reveal-el delay-200 text-xl sm:text-2xl font-bold text-gray-400 tracking-tight mb-6">
+            I'm a <span id="hero-role-typewriter" class="text-white typewriter-cursor-blink bg-clip-text bg-gradient-to-r from-accent to-secondary">Web Developer</span>
+          </h2>
+          
+          <!-- Brief Description -->
+          <p class="hero-reveal-el delay-300 text-base sm:text-lg text-gray-400 max-w-xl mb-8 leading-relaxed" data-translate="hero-desc">
+            Mahasiswa Teknik Informatika UIR yang fokus pada web development, UI modern, dan pengembangan sistem informasi.
+          </p>
+          
+          <!-- Action Buttons -->
+          <div class="hero-reveal-el delay-400 flex flex-wrap gap-4 mb-10 w-full sm:w-auto">
+            <a href="#projects" class="hero-btn-primary px-8 py-3.5 rounded-xl font-bold text-white text-sm tracking-wide text-center flex items-center justify-center gap-2" data-translate="hero-btn-projects">
+              Lihat Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#cv" class="hero-btn-secondary px-8 py-3.5 rounded-xl font-bold text-gray-300 hover:text-white text-sm tracking-wide text-center flex items-center justify-center gap-2" data-translate="hero-btn-cv">
+              Download CV <i class="fas fa-download text-xs ml-1"></i>
+            </a>
+          </div>
+          
+          <!-- Social Profiles -->
+          <div class="hero-reveal-el delay-500 flex items-center gap-4">
+            <span class="text-xs uppercase font-extrabold text-gray-500 tracking-wider">Socials</span>
+            <div class="h-[1px] w-8 bg-gray-800"></div>
+            <div class="flex gap-3">
+              <a href="https://github.com/sahrulefd" target="_blank" class="hero-social-icon" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/sahrul-efendi-3813533bb" target="_blank" class="hero-social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.instagram.com/sahrulefd_" target="_blank" class="hero-social-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Responsive Canvas Renderer -->
+        <div class="lg:col-span-5 flex justify-center items-center">
+          <div id="hero-canvas-container" class="hero-canvas-wrapper canvas-container-box">
+            <canvas id="hero-canvas"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ES6 Module logic -->
+  <script type="module" src="hero.js"></script>
+  
+  <!-- Typewriter helper script for secondary roles loop -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const roleEl = document.getElementById('hero-role-typewriter');
+      if (!roleEl) return;
+      
+      const roles = ["Web Developer", "Network Administrator", "UI Enthusiast"];
+      let wordIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      
+      function typeRoles() {
+        const currentRole = roles[wordIdx];
+        if (isDeleting) {
+          roleEl.textContent = currentRole.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          roleEl.textContent = currentRole.substring(0, charIdx + 1);
+          charIdx++;
+        }
+        
+        let speed = isDeleting ? 30 : 80;
+        
+        if (!isDeleting && charIdx === currentRole.length) {
+          speed = 2000; // Pause at end of word
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          wordIdx = (wordIdx + 1) % roles.length;
+          speed = 400; // Pause before typing next word
+        }
+        
+        setTimeout(typeRoles, speed);
+      }
+      
+      // Delay typing loop start until hero fade-in settled
+      setTimeout(typeRoles, 2500);
+    });
+  </script>
+</body>
+</html>

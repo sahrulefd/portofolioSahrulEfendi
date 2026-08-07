@@ -83,9 +83,14 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="styles/intro-sequence.css">
+  <link rel="stylesheet" href="styles/nexora-blue.css">
 </head>
 
-<body class="bg-darkbg text-gray-300 font-sans selection:bg-primary selection:text-white relative">
+<body class="nexora-page-wrapper selection:bg-blue-600 selection:text-white relative">
+
+
 
   <!-- Interactive Background Overlay & Glowing Elements -->
   <div class="fixed inset-0 grid-overlay z-[-2]"></div>
@@ -97,205 +102,144 @@
       style="animation-delay: -5s; width: 500px; height: 500px; opacity: 0.1;"></div>
   </div>
 
-  <!-- Sticky Navbar -->
-  <header
-    class="fixed top-0 left-0 right-0 z-50 bg-transparent bg-opacity-0 transition-all duration-500 border-b border-transparent py-4">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8">
-      <div class="flex justify-between items-center">
-        <!-- Logo -->
-        <a href="#home" class="flex items-center gap-2 group">
-          <div
-            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-accent flex items-center justify-center shadow-glow-primary group-hover:scale-105 transition-transform duration-300">
-            <span class="text-white font-extrabold text-lg">S</span>
-          </div>
-          <span
-            class="text-white font-extrabold text-xl tracking-tight group-hover:text-accent transition-colors duration-300">Sahrul
-            <span class="text-accent font-medium">Efendi</span></span>
+  <!-- NEXORA BLUE STYLED HEADER NAVBAR -->
+  <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-blue-100/60 shadow-sm transition-all duration-300">
+    <div class="nexora-nav">
+      <!-- Nav Links Left -->
+      <nav class="nexora-nav-links">
+        <a href="#home" class="nexora-nav-link" data-translate="nav-home">Home</a>
+        <a href="#about" class="nexora-nav-link" data-translate="nav-about">Tentang</a>
+        <a href="#projects" class="nexora-nav-link" data-translate="nav-projects">Proyek</a>
+        <a href="#skills" class="nexora-nav-link" data-translate="nav-skills">Keahlian</a>
+        <a href="#certificates" class="nexora-nav-link" data-translate="nav-certificates">Sertifikat</a>
+        <a href="#contact" class="nexora-nav-link" data-translate="nav-contact">Kontak</a>
+      </nav>
+
+      <!-- Brand Logo Center with Profile Avatar -->
+      <a href="#home" class="flex items-center gap-2.5 group text-decoration-none">
+        <img src="image/profil.jpg" alt="Sahrul Efendi Profile" class="w-9 h-9 rounded-full object-cover border-2 border-blue-600 shadow-md group-hover:scale-105 transition-transform duration-300">
+        <span class="text-slate-900 font-black text-xl tracking-tight">SAHRUL<span class="text-blue-600">.</span></span>
+      </a>
+
+      <!-- Right Action Icons & Badges -->
+      <div class="nexora-nav-actions">
+        <button id="lang-toggle" class="nexora-badge-btn" title="Toggle Language">
+          <i class="fas fa-globe"></i>
+          <span class="lang-text">EN</span>
+        </button>
+
+        <a href="https://github.com/sahrulefd" target="_blank" class="nexora-icon-btn" title="GitHub Profile">
+          <i class="fab fa-github text-lg"></i>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-          <a href="#home"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-home">Home</a>
-          <a href="#about"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-about">Tentang</a>
-          <a href="#projects"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-projects">Proyek</a>
-          <a href="#skills"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-skills">Keahlian</a>
-          <a href="#certificates"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-certificates">Sertifikat</a>
-          <a href="#github"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-github">GitHub</a>
-          <a href="#contact"
-            class="nav-link px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-full transition-all duration-300"
-            data-translate="nav-contact">Kontak</a>
-        </nav>
-
-        <!-- Accessibilities & Switchers -->
-        <div class="flex items-center gap-3">
-          <!-- Language Toggle Button -->
-          <button id="lang-toggle"
-            class="btn-secondary px-3 py-1.5 rounded-full text-xs font-bold text-gray-300 hover:text-white flex items-center gap-1">
-            <i class="fas fa-globe"></i>
-            <span class="lang-text">EN</span>
-          </button>
-
-          <!-- Mobile Menu Button -->
-          <button id="mobile-menu-button"
-            class="md:hidden text-gray-300 hover:text-white focus:outline-none p-1.5 rounded-lg hover:bg-white/5 transition-colors">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
+        <a href="#contact" class="nexora-badge-btn bg-blue-600 text-white hover:bg-blue-700 shadow-md">
+          <i class="fas fa-paper-plane"></i>
+          <span>Hire Me</span>
+        </a>
       </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu"
-      class="hidden md:hidden absolute top-full left-0 right-0 bg-darkbg/95 border-b border-white/10 backdrop-blur-xl p-6 shadow-2xl transition-all duration-300">
-      <nav class="flex flex-col space-y-4">
-        <a href="#home"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-home">Home</a>
-        <a href="#about"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-about">Tentang</a>
-        <a href="#projects"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-projects">Proyek</a>
-        <a href="#skills"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-skills">Keahlian</a>
-        <a href="#certificates"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-certificates">Sertifikat</a>
-        <a href="#github"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-github">GitHub</a>
-        <a href="#contact"
-          class="block text-base font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
-          data-translate="nav-contact">Kontak</a>
-      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="min-h-screen pt-36 pb-20 px-6 sm:px-8 flex items-center relative overflow-hidden">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
-      <!-- Intro Info (Left) -->
-      <div class="lg:col-span-7 flex flex-col items-start text-left reveal">
-        <!-- Badge Intro -->
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-accent font-semibold text-xs sm:text-sm mb-6">
-          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-          <span data-translate="hero-greet">Halo, Saya Sahrul Efendi</span>
-        </div>
-
-        <!-- Typewriter Title -->
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-400 tracking-tight mb-3">
-          I'm a <span id="typewriter-text"
-            class="text-white typewriter-cursor bg-clip-text bg-gradient-to-r from-accent to-secondary"></span>
-        </h2>
-
-        <!-- Hero Catchphrase / Big Heading -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-          Building modern web applications with <span
-            class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">clean
-            code</span> and intuitive experiences.
-        </h1>
-
-        <!-- Brief Description -->
-        <p class="text-base sm:text-lg text-gray-400 max-w-2xl mb-8 leading-relaxed" data-translate="hero-desc">
-          Mahasiswa Teknik Informatika UIR yang fokus pada web development, UI modern, dan pengembangan sistem
-          informasi.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-wrap gap-4 mb-10 w-full sm:w-auto">
-          <a href="#projects"
-            class="btn-primary px-8 py-3.5 rounded-xl font-bold text-white text-sm tracking-wide text-center flex items-center justify-center gap-2"
-            data-translate="hero-btn-projects">
-            Lihat Project <i class="fas fa-arrow-right text-xs"></i>
-          </a>
-          <a href="#contact"
-            class="btn-secondary px-8 py-3.5 rounded-xl font-bold text-gray-300 hover:text-white text-sm tracking-wide text-center flex items-center justify-center gap-2"
-            data-translate="hero-btn-contact">
-            Hubungi Saya
-          </a>
-        </div>
-
-        <!-- Social Profiles Links -->
-        <div class="flex items-center gap-4">
-          <span class="text-xs uppercase font-extrabold text-gray-500 tracking-wider">Socials</span>
-          <div class="h-[1px] w-8 bg-gray-700"></div>
-          <div class="flex gap-3">
-            <a href="https://github.com/sahrulefd" target="_blank"
-              class="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-sm"
-              title="GitHub">
-              <i class="fab fa-github text-lg"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sahrul-efendi-3813533bb" target="_blank"
-              class="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-sm"
-              title="LinkedIn">
-              <i class="fab fa-linkedin-in text-lg"></i>
-            </a>
-            <a href="https://www.instagram.com/sahrulefd_" target="_blank"
-              class="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-sm"
-              title="Instagram">
-              <i class="fab fa-instagram text-lg"></i>
-            </a>
-            <a href="https://www.tiktok.com/@sahrulefndi16" target="_blank"
-              class="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-sm"
-              title="TikTok">
-              <i class="fab fa-tiktok text-lg"></i>
-            </a>
-            <a href="https://wa.me/6285833107599" target="_blank"
-              class="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-sm"
-              title="WhatsApp">
-              <i class="fab fa-whatsapp text-lg"></i>
-            </a>
-          </div>
-        </div>
+  <!-- NEXORA HERO SECTION -->
+  <section id="home" class="relative pt-6 pb-12 overflow-hidden">
+    <!-- Giant Typography Display Banner -->
+    <div class="nexora-hero-header-banner">
+      <div class="nexora-banner-text">
+        Define Your
+        <span class="nexora-text-highlight">SKILLS</span>
       </div>
 
-      <!-- Big Avatar Image Layout (Right) -->
-      <div class="lg:col-span-5 flex justify-center relative reveal delay-200">
-        <!-- Floating shapes & glowing aura background -->
-        <div
-          class="absolute w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-gradient-to-tr from-primary to-accent opacity-30 blur-[40px] animate-pulse-glow z-0">
-        </div>
-        <div class="absolute w-80 h-80 rounded-full border border-white/5 animate-spin"
-          style="animation-duration: 25s;"></div>
-        <div class="absolute w-64 h-64 rounded-full border border-dashed border-primary/20 animate-spin"
-          style="animation-duration: 40s; animation-direction: reverse;"></div>
+      <div class="hidden md:block">
+        <i class="fas fa-asterisk nexora-star-accent"></i>
+      </div>
 
-        <!-- Avatar Wrapper Frame (Apple Glass style) -->
-        <div
-          class="relative w-64 sm:w-72 h-64 sm:h-72 rounded-2xl p-2 glass-panel hover:scale-105 duration-500 overflow-hidden shadow-2xl z-10 animate-float">
-          <div class="w-full h-full rounded-xl overflow-hidden relative group">
-            <img src="img/profil.jpg" alt="Sahrul Efendi Profil"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 via-transparent to-transparent opacity-60">
+      <div class="nexora-banner-text text-right">
+        Own Your
+        <span class="nexora-text-highlight">FUTURE</span>
+      </div>
+    </div>
+
+    <!-- Main Blue Rounded Card Container -->
+    <div class="nexora-card-wrapper">
+      <div class="nexora-blue-card">
+        <!-- Organic Blobs & Dots Pattern Background -->
+        <div class="nexora-card-blob-1"></div>
+        <div class="nexora-card-blob-2"></div>
+        <div class="nexora-card-pattern"></div>
+
+        <!-- Left Content Inside Card -->
+        <div class="nexora-left-content">
+          <div class="nexora-badge-tag">
+            <i class="fas fa-code text-xs"></i>
+            <span>✦ Web Developer</span>
+          </div>
+
+          <h1 class="nexora-card-title">
+            Where Code Meets Creative Design
+          </h1>
+
+          <p class="nexora-card-desc">
+            Mahasiswa S1 Teknik Informatika UIR yang berfokus pada Web Development dan UI/UX Modern.
+          </p>
+
+          <a href="#projects" class="nexora-cta-btn">
+            <span>Lihat Project</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <!-- Social Proof Avatar Badge with Sahrul Profile Photo -->
+          <div class="nexora-avatar-pill">
+            <div class="nexora-avatar-group">
+              <img src="image/profil.jpg" alt="Sahrul Efendi" class="nexora-avatar-thumb">
+            </div>
+            <span class="nexora-avatar-text">6 Project Web Selesai <i class="fas fa-circle-check text-blue-300 ml-1"></i></span>
+          </div>
+        </div>
+
+        <!-- Center Central Overlapping Character Image -->
+        <div class="nexora-character-container">
+          <img src="image/profil.jpg" alt="Sahrul Efendi - Web Developer" class="nexora-character-img">
+        </div>
+
+        <!-- Right Content Inside Card -->
+        <div class="nexora-right-content">
+          <!-- Feature Icons List -->
+          <div class="nexora-features-list">
+            <div class="nexora-feature-item">
+              <i class="fas fa-bolt nexora-feature-icon"></i>
+              <span class="nexora-feature-label">High Speed</span>
+            </div>
+            <div class="nexora-feature-item">
+              <i class="fas fa-mobile-alt nexora-feature-icon"></i>
+              <span class="nexora-feature-label">Responsive</span>
+            </div>
+            <div class="nexora-feature-item">
+              <i class="fas fa-gem nexora-feature-icon"></i>
+              <span class="nexora-feature-label">Clean Code</span>
             </div>
           </div>
+
+          <!-- Featured Project White Card Widget -->
+          <div class="nexora-project-card">
+            <div class="nexora-project-card-header">
+              <span class="nexora-project-card-title">Featured Project</span>
+              <i class="fas fa-laptop-code text-xs text-gray-400"></i>
+            </div>
+            <div class="nexora-project-img-wrapper">
+              <img src="img/nexora_preview.png" alt="Featured Project Preview" class="nexora-project-img">
+            </div>
+            <div>
+              <div class="nexora-project-name">Sahrul Portfolio Portal</div>
+              <div class="nexora-project-sub">Fullstack Web App</div>
+            </div>
+            <a href="#projects" class="nexora-project-btn">
+              <span>View Case Study</span>
+              <i class="fas fa-chevron-right text-xs"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Floating floating dynamic card -->
-        <div
-          class="absolute bottom-4 right-[-10px] sm:right-0 glass-panel px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl z-20 animate-bounce"
-          style="animation-duration: 4s;">
-          <div class="w-3 h-3 rounded-full bg-green-500 animate-ping"></div>
-          <span class="text-xs font-bold text-white tracking-wide">Open for Projects</span>
-        </div>
       </div>
-
     </div>
   </section>
 
@@ -325,8 +269,8 @@
               class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-4">
               <i class="fas fa-folder-open text-xl"></i>
             </div>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">20+</h3>
-            <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide"
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">6</h3>
+            <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide"
               data-translate="about-stat-projects">Project</p>
           </div>
 
@@ -335,8 +279,8 @@
               class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300 mb-4">
               <i class="fas fa-award text-xl"></i>
             </div>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">10+</h3>
-            <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide"
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">8</h3>
+            <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide"
               data-translate="about-stat-certs">Sertifikat</p>
           </div>
 
@@ -345,8 +289,8 @@
               class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300 mb-4">
               <i class="fas fa-calendar-alt text-xl"></i>
             </div>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">3+</h3>
-            <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide"
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">3+</h3>
+            <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide"
               data-translate="about-stat-learning">Tahun Belajar</p>
           </div>
 
@@ -355,9 +299,8 @@
               class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 group-hover:bg-white group-hover:text-darkbg transition-colors duration-300 mb-4">
               <i class="fab fa-github text-xl"></i>
             </div>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2" id="github-total-repos">1
-            </h3>
-            <p class="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide"
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2" id="github-total-repos">1</h3>
+            <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide"
               data-translate="about-stat-github">GitHub Account</p>
           </div>
 
@@ -377,13 +320,12 @@
               <span
                 class="absolute left-[-31px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-darkbg group-hover:bg-accent transition-colors duration-300"></span>
               <div class="glass-panel glow-card p-5 rounded-xl border border-white/5">
-                <span class="text-xs font-bold text-accent px-2 py-1 rounded bg-accent/10 mb-2 inline-block">2022 -
+                <span class="text-xs font-bold text-blue-600 px-2.5 py-1 rounded bg-blue-50 mb-2 inline-block">2023 -
                   Sekarang</span>
-                <h4 class="text-base sm:text-lg font-bold text-white mb-1">Teknik Informatika (S1)</h4>
-                <p class="text-sm font-semibold text-gray-400 mb-2">Universitas Islam Riau (UIR)</p>
-                <p class="text-xs text-gray-500 leading-relaxed">
-                  Fokus pada Rekayasa Perangkat Lunak, Struktur Data, Pemrograman Web, dan Manajemen Infrastruktur
-                  Jaringan.
+                <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1">Teknik Informatika (S1)</h4>
+                <p class="text-sm font-semibold text-blue-600 mb-2">Universitas Islam Riau (UIR)</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Fokus pada Rekayasa Perangkat Lunak, Pemrograman Web Modern, Pemrograman Bergerak, dan Pengembangan UI/UX.
                 </p>
               </div>
             </div>
@@ -394,11 +336,11 @@
               <span
                 class="absolute left-[-31px] top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-darkbg group-hover:bg-primary transition-colors duration-300"></span>
               <div class="glass-panel glow-card p-5 rounded-xl border border-white/5">
-                <span class="text-xs font-bold text-gray-400 px-2 py-1 rounded bg-white/5 mb-2 inline-block">2019 -
-                  2022</span>
-                <h4 class="text-base sm:text-lg font-bold text-white mb-1">MIPA</h4>
-                <p class="text-sm font-semibold text-gray-400 mb-2">SMAN 1 Benai</p>
-                <p class="text-xs text-gray-500 leading-relaxed">
+                <span class="text-xs font-bold text-slate-700 px-2.5 py-1 rounded bg-slate-100 mb-2 inline-block">2020 -
+                  2023</span>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1">MIPA</h4>
+                <p class="text-sm font-semibold text-slate-700 mb-2">SMAN 1 Benai</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
                   Mempelajari sains, matematika dasar, serta aktif dalam kegiatan ekstrakurikuler organisasi kesiswaan.
                 </p>
               </div>
@@ -410,10 +352,10 @@
               <span
                 class="absolute left-[-31px] top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-darkbg group-hover:bg-primary transition-colors duration-300"></span>
               <div class="glass-panel glow-card p-5 rounded-xl border border-white/5">
-                <span class="text-xs font-bold text-gray-400 px-2 py-1 rounded bg-white/5 mb-2 inline-block">2016 -
-                  2019</span>
-                <h4 class="text-base sm:text-lg font-bold text-white mb-1">Pendidikan Menengah Pertama</h4>
-                <p class="text-sm font-semibold text-gray-400 mb-2">SMPN 2 Benai</p>
+                <span class="text-xs font-bold text-slate-700 px-2.5 py-1 rounded bg-slate-100 mb-2 inline-block">2017 -
+                  2020</span>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1">Pendidikan Menengah Pertama</h4>
+                <p class="text-sm font-semibold text-slate-700 mb-2">SMPN 2 Benai</p>
               </div>
             </div>
 
@@ -423,10 +365,10 @@
               <span
                 class="absolute left-[-31px] top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-darkbg group-hover:bg-primary transition-colors duration-300"></span>
               <div class="glass-panel glow-card p-5 rounded-xl border border-white/5">
-                <span class="text-xs font-bold text-gray-400 px-2 py-1 rounded bg-white/5 mb-2 inline-block">2010 -
-                  2016</span>
-                <h4 class="text-base sm:text-lg font-bold text-white mb-1">Pendidikan Dasar</h4>
-                <p class="text-sm font-semibold text-gray-400 mb-2">SDN 007 Simandolak</p>
+                <span class="text-xs font-bold text-slate-700 px-2.5 py-1 rounded bg-slate-100 mb-2 inline-block">2011 -
+                  2017</span>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1">Pendidikan Dasar</h4>
+                <p class="text-sm font-semibold text-slate-700 mb-2">SDN 007 Simandolak</p>
               </div>
             </div>
 
@@ -580,8 +522,8 @@
             </div>
 
             <div class="h-44 w-full rounded-xl overflow-hidden border border-white/10 mb-4 relative">
-              <img src="img/portofolio.png" alt="Portfolio website screenshot"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="img/nexora_preview.png" alt="Portfolio website screenshot"
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
             </div>
 
             <div class="flex justify-end">
@@ -1264,25 +1206,25 @@
         <div class="lg:col-span-8 flex flex-col gap-6">
 
           <!-- Simulated Contribution Grid -->
-          <div class="glass-panel p-6 rounded-2xl border border-white/10">
+          <div class="glass-panel p-6 rounded-2xl border border-slate-200">
             <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <i class="fas fa-calendar-alt text-primary"></i> Yearly Contributions Graph
+              <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                <i class="fas fa-calendar-alt text-blue-600"></i> Yearly Contributions Graph
               </h4>
-              <div class="flex items-center gap-1 text-[10px] text-gray-500 font-bold">
+              <div class="flex items-center gap-1.5 text-[11px] text-slate-600 font-bold">
                 <span>Less</span>
-                <span class="w-2.5 h-2.5 rounded bg-white/5 border border-white/10"></span>
-                <span class="w-2.5 h-2.5 rounded bg-emerald-900"></span>
-                <span class="w-2.5 h-2.5 rounded bg-emerald-700"></span>
-                <span class="w-2.5 h-2.5 rounded bg-emerald-500"></span>
-                <span class="w-2.5 h-2.5 rounded bg-emerald-400"></span>
+                <span class="w-3 h-3 rounded-sm level-0 border border-slate-300"></span>
+                <span class="w-3 h-3 rounded-sm level-1"></span>
+                <span class="w-3 h-3 rounded-sm level-2"></span>
+                <span class="w-3 h-3 rounded-sm level-3"></span>
+                <span class="w-3 h-3 rounded-sm level-4"></span>
                 <span>More</span>
               </div>
             </div>
 
-            <!-- Github Contribution Chart Grid (Responsive calendar grid representation) -->
+            <!-- Github Contribution Chart Grid -->
             <div class="overflow-x-auto">
-              <div class="min-w-[580px] p-2 bg-white/[0.01] rounded-xl border border-white/5">
+              <div class="min-w-[600px] p-3 bg-slate-50/80 rounded-xl border border-slate-200">
                 <div class="github-contribution-graph" id="contribution-graph-grid">
                   <!-- Generated by JavaScript -->
                 </div>
@@ -1435,13 +1377,9 @@
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
 
         <!-- Logo Footer -->
-        <a href="#home" class="flex items-center gap-2">
-          <div
-            class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-accent flex items-center justify-center shadow-glow-primary">
-            <span class="text-white font-extrabold text-lg">S</span>
-          </div>
-          <span class="text-white font-extrabold text-xl tracking-tight">Sahrul <span
-              class="text-accent font-medium">Efendi</span></span>
+        <a href="#home" class="flex items-center gap-2.5 group text-decoration-none">
+          <img src="image/profil.jpg" alt="Sahrul Efendi Profile" class="w-9 h-9 rounded-full object-cover border-2 border-blue-600 shadow-md">
+          <span class="text-slate-900 font-black text-xl tracking-tight">SAHRUL <span class="text-blue-600">EFENDI</span></span>
         </a>
 
         <!-- Icons footer -->
@@ -1510,10 +1448,10 @@
         "nav-certificates": "Sertifikat",
         "nav-github": "GitHub",
         "nav-contact": "Kontak",
-        "hero-greet": "Halo, Saya Sahrul Efendi",
+        "hero-greet-badge": "Halo 👋",
         "hero-desc": "Mahasiswa Teknik Informatika UIR yang fokus pada web development, UI modern, dan pengembangan sistem informasi.",
         "hero-btn-projects": "Lihat Project",
-        "hero-btn-contact": "Hubungi Saya",
+        "hero-btn-cv": "Download CV",
         "about-title": "Tentang Saya",
         "about-desc": "Saya mahasiswa S1 Teknik Informatika Universitas Islam Riau yang aktif mengembangkan website, sistem informasi, dan UI modern dengan pendekatan kreatif.",
         "about-stat-projects": "Project",
@@ -1548,10 +1486,10 @@
         "nav-certificates": "Certificates",
         "nav-github": "GitHub",
         "nav-contact": "Contact",
-        "hero-greet": "Hi, I'm Sahrul Efendi",
+        "hero-greet-badge": "Hello 👋",
         "hero-desc": "Informatics Engineering student at UIR focusing on web development, modern UI, and information system development.",
         "hero-btn-projects": "View Projects",
-        "hero-btn-contact": "Contact Me",
+        "hero-btn-cv": "Download CV",
         "about-title": "About Me",
         "about-desc": "I am an Informatics Engineering student at Universitas Islam Riau who actively develops websites, information systems, and modern UI designs with a creative touch.",
         "about-stat-projects": "Projects",
@@ -1697,33 +1635,34 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Looping Typewriter for Hero
-    const typewriterText = document.getElementById('typewriter-text');
-    const words = ["Web Developer", "Network Administrator", "UI Enthusiast"];
-    let wordIndex = 0;
-    let charIndex = 0;
+    // Looping Typewriter for Hero Roles
+    const roleEl = document.getElementById('hero-role-typewriter');
+    const roles = ["Web Developer", "Frontend Developer", "UI/UX Enthusiast"];
+    let wordIdx = 0;
+    let charIdx = 0;
     let isDeleting = false;
-    function type() {
-      const currentWord = words[wordIndex];
+    function typeRoles() {
+      if (!roleEl) return;
+      const currentRole = roles[wordIdx];
       if (isDeleting) {
-        typewriterText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
+        roleEl.textContent = currentRole.substring(0, charIdx - 1);
+        charIdx--;
       } else {
-        typewriterText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
+        roleEl.textContent = currentRole.substring(0, charIdx + 1);
+        charIdx++;
       }
 
-      let typeSpeed = isDeleting ? 40 : 100;
+      let speed = isDeleting ? 30 : 80;
 
-      if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 1500; // pause on finish
+      if (!isDeleting && charIdx === currentRole.length) {
+        speed = 2000; // Pause at end of word
         isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
+      } else if (isDeleting && charIdx === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 400; // pause before typing next
+        wordIdx = (wordIdx + 1) % roles.length;
+        speed = 400; // Pause before typing next word
       }
-      setTimeout(type, typeSpeed);
+      setTimeout(typeRoles, speed);
     }
 
     // Interactive mouse follow glow card variables update
@@ -1846,16 +1785,16 @@
         document.getElementById('github-following').textContent = data.following;
         document.getElementById('github-location').textContent = data.location || 'Indonesia';
 
-        // Update Repos count inside About Section stat
-        document.getElementById('github-total-repos').textContent = data.public_repos;
+        // Keep GitHub Account Stat at 1
+        document.getElementById('github-total-repos').textContent = "1";
 
       } catch (err) {
         console.warn("Using fallback GitHub profile statistics: ", err);
         // Set basic fallbacks in case API fails
-        document.getElementById('github-repos-count').textContent = "12";
-        document.getElementById('github-followers').textContent = "15";
-        document.getElementById('github-following').textContent = "22";
-        document.getElementById('github-total-repos').textContent = "12";
+        document.getElementById('github-repos-count').textContent = "8";
+        document.getElementById('github-followers').textContent = "1";
+        document.getElementById('github-following').textContent = "0";
+        document.getElementById('github-total-repos').textContent = "1";
       }
 
       try {
@@ -1940,12 +1879,17 @@
 
     // Trigger loads on window ready
     window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(type, 1000);
+      setTimeout(typeRoles, 2500);
       setLanguage('id'); // Default to Indonesian
       loadGitHubProfile();
       generateContributionsCalendar();
     });
   </script>
+  
+
+
+  <!-- ES6 Module for Premium Hero Canvas -->
+  <script type="module" src="hero.js"></script>
 </body>
 
 </html>

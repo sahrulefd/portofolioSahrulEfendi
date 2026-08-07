@@ -1,0 +1,166 @@
+/* ============================================
+   Fullscreen Sequence Intro — Auto-Play
+   Cinematic intro that plays then removes itself
+   ============================================ */
+
+/* Intro Section: fixed fullscreen overlay */
+#sequence-intro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #030712;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fade-out when sequence finishes */
+#sequence-intro.intro-finished {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Canvas fills entire viewport */
+.intro-canvas-sticky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#intro-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---- Intro Loader (preloading frames) ---- */
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: #030712;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: all;
+}
+
+.intro-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-loader-bar-track {
+  width: 220px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.intro-loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  border-radius: 999px;
+  transition: width 0.15s ease;
+}
+
+.intro-loader-text {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.intro-loader-percentage {
+  font-family: 'JetBrains Mono', 'Plus Jakarta Sans', monospace;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+/* ---- Skip Button ---- */
+.intro-skip-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.intro-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---- Vignette overlay ---- */
+.intro-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(3, 7, 18, 0.5) 100%
+  );
+}
+
+/* ---- Navbar hiding during intro ---- */
+header.intro-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-100%) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .intro-loader-percentage {
+    font-size: 2rem;
+  }
+  
+  .intro-loader-bar-track {
+    width: 160px;
+  }
+
+  .intro-skip-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.6rem;
+    padding: 0.4rem 1rem;
+  }
+}
